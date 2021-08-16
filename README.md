@@ -1,15 +1,17 @@
 # TC2007B.2
 
 Primeras propuestas UX aplicación
-
+## Pantalla de Inicio
+![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Pantalla%20de%20Inicio.png)
 ## Pantalla Login
-![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/login.png)
+![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Pantalla%20Login.png)
+## Pantalla Sign In
+![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Pantalla%20Sign%20In.png)
 ## Pantlla Feed
-![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Feed.PNG)
+![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Feed.png)
 ## Pantalla Mapa
-![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Vista%20mapa.jpg)
+![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Mapa.png)
 ## Pantalla Settings
-![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/settings.png)
-## Pantalla Progreso de campañas/donaciones
-![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Screen%20Shot%202021-08-12%20at%208.12.30%20PM.png)
-![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Screen%20Shot%202021-08-12%20at%208.17.42%20PM.png)
+![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Settings.png)
+## Pantalla Milestones
+![alt text](https://github.com/RafaGomezGlez/TC2007B.2/blob/main/InterfazGrafica/Milestones.png)
