@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_main.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_feed.xml" value="0.3645833333333333" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_main.xml" value="0.67" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_map.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_milestones.xml" value="0.3645833333333333" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_settings.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_sign_in.xml" value="0.37864583333333335" />
       </map>
     </option>
   </component>
