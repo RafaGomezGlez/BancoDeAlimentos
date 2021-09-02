@@ -9,18 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoDeComida">
-        <activity
-            android:name=".Settings"
-            android:exported="true" />
-        <activity
-            android:name=".Milestones"
-            android:exported="true" />
-        <activity
-            android:name=".Map"
-            android:exported="true" />
-        <activity
-            android:name=".Feed"
-            android:exported="true" />
+
         <activity
             android:name=".LogIn"
             android:exported="true" />

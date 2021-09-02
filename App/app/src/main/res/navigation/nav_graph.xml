@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mapa">
 
+    <fragment
+        android:id="@+id/mapa"
+        android:name="tec.mx.bancodecomida.mapa"
+        android:label="fragment_mapa"
+        tools:layout="@layout/fragment_mapa" >
+        <action
+            android:id="@+id/action_mapa_to_milestones"
+            app:destination="@id/milestones" />
+    </fragment>
+    <fragment
+        android:id="@+id/milestones"
+        android:name="tec.mx.bancodecomida.milestones"
+        android:label="fragment_milestones"
+        tools:layout="@layout/fragment_milestones" >
+        <action
+            android:id="@+id/action_milestones_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="tec.mx.bancodecomida.settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
