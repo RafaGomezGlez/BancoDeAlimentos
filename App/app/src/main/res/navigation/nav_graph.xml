@@ -6,43 +6,49 @@
     app:startDestination="@id/presentationFragment">
 
     <fragment
-        android:id="@+id/mapa"
+        android:id="@+id/mapaFragment"
         android:name="tec.mx.bancodecomida.mapa"
-        android:label="fragment_mapa"
-        tools:layout="@layout/fragment_mapa" >
-        <action
-            android:id="@+id/action_mapa_to_milestones"
-            app:destination="@id/milestones" />
-    </fragment>
+        android:label="Map"
+        tools:layout="@layout/fragment_mapa" />
     <fragment
-        android:id="@+id/milestones"
+        android:id="@+id/milestonesFragment"
         android:name="tec.mx.bancodecomida.milestones"
-        android:label="fragment_milestones"
-        tools:layout="@layout/fragment_milestones" >
-        <action
-            android:id="@+id/action_milestones_to_settings"
-            app:destination="@id/settings" />
-    </fragment>
+        android:label="Milestones"
+        tools:layout="@layout/fragment_milestones" />
     <fragment
-        android:id="@+id/settings"
+        android:id="@+id/settingsFragment"
         android:name="tec.mx.bancodecomida.settings"
-        android:label="fragment_settings"
+        android:label="Settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/feedFragment"
         android:name="tec.mx.bancodecomida.FeedFragment"
-        android:label="fragment_feed"
-        tools:layout="@layout/fragment_feed" />
+        android:label="Feed"
+        tools:layout="@layout/fragment_feed">
+        <argument
+            android:name="password"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/signInFragment"
         android:name="tec.mx.bancodecomida.SignInFragment"
-        android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" />
+        android:label="Sign in"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
     <fragment
         android:id="@+id/presentationFragment"
         android:name="tec.mx.bancodecomida.PresentationFragment"
-        android:label="fragment_presentation"
-        tools:layout="@layout/fragment_presentation" >
+        android:label="presentation"
+        tools:layout="@layout/fragment_presentation">
         <action
             android:id="@+id/action_presentationFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
@@ -53,6 +59,10 @@
     <fragment
         android:id="@+id/logInFragment"
         android:name="tec.mx.bancodecomida.LogInFragment"
-        android:label="fragment_log_in"
-        tools:layout="@layout/fragment_log_in" />
+        android:label="Login"
+        tools:layout="@layout/fragment_log_in">
+        <action
+            android:id="@+id/action_logInFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
 </navigation>

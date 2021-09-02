@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/feedFragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+    <item
+        android:id="@+id/mapaFragment"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="Map"/>
+    <item
+        android:id= "@+id/milestonesFragment"
+        android:icon="@drawable/ic_baseline_flag_24"
+        android:title="Milestones"/>
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings"/>
+</menu>

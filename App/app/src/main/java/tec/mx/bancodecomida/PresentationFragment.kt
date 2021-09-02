@@ -1,23 +1,41 @@
 package tec.mx.bancodecomida
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_presentation.*
+import tec.mx.bancodecomida.databinding.FragmentPresentationBinding
+
+
+private var _binding: FragmentPresentationBinding? = null
+private val binding get() = _binding!!
 
 
 class PresentationFragment : Fragment(R.layout.fragment_presentation) {
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater,
+                               container: ViewGroup?,
+                               savedInstanceState: Bundle?
+    ) : View? {
+        _binding = FragmentPresentationBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        button_GetStarted.setOnClickListener{
-            val action = PresentationFragmentDirections.actionPresentationFragmentToLogInFragment()
-            findNavController().navigate(action)
-        }
-        button_LogIn.setOnClickListener{
+
+       binding.buttonGetStarted.setOnClickListener{
             val action = PresentationFragmentDirections.actionPresentationFragmentToSignInFragment()
             findNavController().navigate(action)
         }
+        binding.buttonLogIn.setOnClickListener{
+            val action = PresentationFragmentDirections.actionPresentationFragmentToLogInFragment()
+            findNavController().navigate(action)
+        }
+
+        return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
