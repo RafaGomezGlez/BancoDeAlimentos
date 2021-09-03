@@ -17,16 +17,22 @@ import java.security.AccessControlException
 
 
 class MainActivity : AppCompatActivity() {
+
+    //Navigator bar
     private lateinit var navController : NavController
+    //Use in order to avoid getElementById
     private lateinit var binding: ActivityMainBinding
+
     private lateinit var appBarConfiguration: AppBarConfiguration
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //binding library
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
@@ -34,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(R.id.feedFragment, R.id.mapaFragment, R.id.milestonesFragment, R.id.settingsFragment)
         )
+
 
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
