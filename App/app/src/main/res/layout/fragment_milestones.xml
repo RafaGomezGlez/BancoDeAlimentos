@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:text="@string/familias_alimentadas_de_m_xico"
+            android:text="@string/familias_alimentadas_de_méxico"
             android:textColor="#373737"
             android:textSize="24sp"
             android:textStyle="bold"

@@ -13,5 +13,8 @@
     <string name="support">Support</string>
     <string name="payment">Payment</string>
     <string name="todo">TODO</string>
-    <string name="familias_alimentadas_de_m_xico">Familias alimentadas de México</string>
+    <string name="familias_alimentadas_de_méxico">Familias alimentadas de México</string>
+    <string name="Name">name</string>
+    <string name="Email_Addres" />
+    <string name="Email_Address" />
 </resources>

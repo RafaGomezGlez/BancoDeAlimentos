@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        tools:context=".settingsFragment">
+        tools:context="settings_profile">
 
         <TextView
             android:id="@+id/nameTextView"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="36dp"
-            android:text="@string/profile"
+            android:text="Name"
             android:textColor="#5C5C60"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -39,57 +39,30 @@
             app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
         <TextView
-            android:id="@+id/notificationsTextView"
+            android:id="@+id/passwordTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="28dp"
-            android:text="@string/notifications"
-            android:textColor="#5C5C60"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/paymentTextView" />
-
-        <TextView
-            android:id="@+id/supportTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/support"
-            android:textColor="#5C5C60"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/notificationsTextView"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/paymentTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/payment"
+            android:text="@string/password"
             android:textColor="#5C5C60"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profileTextView" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="244dp"
-            android:layout_height="156dp"
-            android:contentDescription="@string/todo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+        <TextView
+            android:id="@+id/addressTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="20dp"
+            android:text="Email Address"
+            android:textColor="#5C5C60"
+            android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.817"
-            app:srcCompat="@drawable/bancomx_logo_color" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
