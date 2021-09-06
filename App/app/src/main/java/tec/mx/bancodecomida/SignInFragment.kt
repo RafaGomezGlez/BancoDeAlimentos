@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import tec.mx.bancodecomida.R
+import tec.mx.bancodecomida.SignInFragmentDirections
 import tec.mx.bancodecomida.databinding.FragmentSignInBinding
 
 //Using binding library in order to avoid using getElementById

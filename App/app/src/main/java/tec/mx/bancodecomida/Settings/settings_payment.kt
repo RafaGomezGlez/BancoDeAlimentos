@@ -1,10 +1,11 @@
-package tec.mx.bancodecomida
+package tec.mx.bancodecomida.Settings
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import tec.mx.bancodecomida.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [settings_support.newInstance] factory method to
+ * Use the [settings_payment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class settings_support : Fragment() {
+class settings_payment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +35,7 @@ class settings_support : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings_support, container, false)
+        return inflater.inflate(R.layout.fragment_settings_payment, container, false)
     }
 
     companion object {
@@ -44,12 +45,12 @@ class settings_support : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment settings_support.
+         * @return A new instance of fragment settings_payment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            settings_support().apply {
+            settings_payment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

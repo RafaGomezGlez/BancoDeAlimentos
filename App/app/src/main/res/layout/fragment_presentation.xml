@@ -8,7 +8,7 @@
         android:gravity="center"
         android:orientation="vertical"
         tools:context=".PresentationFragment"
-        android:background="#CE0E2D"
+        android:background="@drawable/presentation_background"
         >
 
         <TextView

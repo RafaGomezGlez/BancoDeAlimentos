@@ -1,4 +1,4 @@
-package tec.mx.bancodecomida
+package tec.mx.bancodecomida.Settings
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

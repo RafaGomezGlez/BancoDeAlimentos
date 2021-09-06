@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/feedFragment">
+    app:startDestination="@id/presentationFragment">
 
     <fragment
         android:id="@+id/mapaFragment"
@@ -80,22 +80,22 @@
     </fragment>
     <fragment
         android:id="@+id/settings_profile"
-        android:name="tec.mx.bancodecomida.settings_profile"
+        android:name="tec.mx.bancodecomida.Settings.settings_profile"
         android:label="@string/profile"
         tools:layout="@layout/fragment_settings_profile" />
     <fragment
         android:id="@+id/settings_payment"
-        android:name="tec.mx.bancodecomida.settings_payment"
+        android:name="tec.mx.bancodecomida.Settings.settings_payment"
         android:label="Payment"
         tools:layout="@layout/fragment_settings_payment" />
     <fragment
         android:id="@+id/settings_notifications"
-        android:name="tec.mx.bancodecomida.settings_notifications"
+        android:name="tec.mx.bancodecomida.Settings.settings_notifications"
         android:label="Notifications"
         tools:layout="@layout/fragment_settings_notifications" />
     <fragment
         android:id="@+id/settings_support"
-        android:name="tec.mx.bancodecomida.settings_support"
+        android:name="tec.mx.bancodecomida.Settings.settings_support"
         android:label="Support"
         tools:layout="@layout/fragment_settings_support" />
 </navigation>
