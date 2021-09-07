@@ -1,19 +1,14 @@
 package tec.mx.bancodecomida
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.view.View
-import android.widget.SeekBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import tec.mx.bancodecomida.databinding.ActivityMainBinding
-import java.security.AccessControlException
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         //Create the object binding, it's similar to R. ...., whenever you want
         //to call a View in your xml file, just use binding.View        binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
@@ -54,6 +50,8 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         //The toolbar will be updated when the destination changes
         binding.bottomNav.setupWithNavController(navController)
+
+
     }
 
     //We're connecting AppCompatActivity with NavigationUI, this means
