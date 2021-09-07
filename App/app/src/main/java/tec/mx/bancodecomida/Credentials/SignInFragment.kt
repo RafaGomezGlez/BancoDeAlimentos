@@ -30,7 +30,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
             val username = binding.nameEditText.text.toString()
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-            val action = SignInFragmentDirections.actionSignInFragmentTestToMainActivity(username, email, password)
+            val action = SignInFragmentDirections.actionSignInToNavGraph()
             findNavController().navigate(action)
         }
 
