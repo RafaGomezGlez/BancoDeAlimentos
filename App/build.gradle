@@ -3,10 +3,22 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        // This private repository is required to resolve the Cardinal SDK transitive dependency.
+        maven {
+            url  "https://cardinalcommerceprod.jfrog.io/artifactory/android"
+            credentials {
+                // Be sure to add these non-sensitive credentials in order to retrieve dependencies from
+                // the private repository.
+                username paypal_sgerritz
+                password AKCp8jQ8tAahqpT5JjZ4FRP2mW7GMoFZ674kGqHmupTesKeAY2G8NcmPKLuTxTGkKjDLRzDUQ
+            }
+        }
+
     }
+
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.2"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30'
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5")
 
         // NOTE: Do not place your application dependencies here; they belong
