@@ -2,7 +2,7 @@ package tec.mx.bancodecomida.model
 
 data class New (
     val id: Int,
-    val firstName: String,
-    val lastName: String,
-    val age: Int
+    val title: String,
+    val author: String,
+    val description: String
 )
