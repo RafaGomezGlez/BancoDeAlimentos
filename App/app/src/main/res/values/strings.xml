@@ -13,8 +13,11 @@
     <string name="support">Support</string>
     <string name="payment">Payment</string>
     <string name="todo">TODO</string>
-    <string name="familias_alimentadas_de_méxico">Familias alimentadas de México</string>
+    <string name="familias_alimentadas_en_mexico">Familias alimentadas de México</string>
     <string name="Name">name</string>
     <string name="Email_Addres" />
     <string name="Email_Address" />
+    <string name="guadalajara">guadalajara</string>
+    <string name="tlaquepaque">tlaquepaque</string>
+    <string name="tonal">tonala</string>
 </resources>

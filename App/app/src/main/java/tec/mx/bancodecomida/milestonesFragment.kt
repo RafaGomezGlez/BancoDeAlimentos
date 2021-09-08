@@ -28,6 +28,11 @@ class milestones : Fragment(R.layout.fragment_milestones) {
         _binding = FragmentMilestonesBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        binding.donateButton.setOnClickListener{
+            val action = milestonesDirections.actionMilestonesFragmentToDonationFragment()
+            findNavController().navigate(action)
+        }
+
         //Progress bar settings
         binding.progressBarGuadalajara.max = 1000
         binding.progressBarTlaquepaque.max = 1000
