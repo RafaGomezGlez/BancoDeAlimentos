@@ -1,12 +1,12 @@
-package tec.mx.bancodecomida
+package tec.mx.bancodecomida.Credentials
 
+//import tec.mx.bancodecomida.presentationFragmentTestDirections
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import tec.mx.bancodecomida.PresentationFragmentDirections
 import tec.mx.bancodecomida.R
 import tec.mx.bancodecomida.databinding.FragmentPresentationBinding
 
@@ -18,8 +18,8 @@ private val binding get() = _binding!!
 class PresentationFragment : Fragment(R.layout.fragment_presentation) {
     //This is the correct syntax if we want to use binding library
     override fun onCreateView(inflater: LayoutInflater,
-                               container: ViewGroup?,
-                               savedInstanceState: Bundle?
+                              container: ViewGroup?,
+                              savedInstanceState: Bundle?
     ) : View? {
         //Create the object binding, it's similar to R. ...., whenever you want
         //to call a View in your xml file, just use binding.View
@@ -28,13 +28,13 @@ class PresentationFragment : Fragment(R.layout.fragment_presentation) {
 
 
         //Listener for the getStarted button that will send you to SignInFragment
-       binding.buttonGetStarted.setOnClickListener{
-            val action = PresentationFragmentDirections.actionPresentationFragmentToSignInFragment()
+        binding.buttonGetStarted.setOnClickListener{
+            val action = PresentationFragmentDirections.actionPresentationFragmentTestToSignInFragmentTest()
             findNavController().navigate(action)
         }
         //Listener for the Login button that will send you to LogInFragment
         binding.buttonLogIn.setOnClickListener{
-            val action = PresentationFragmentDirections.actionPresentationFragmentToLogInFragment()
+            val action = PresentationFragmentDirections.actionPresentationFragmentTestToLoginFragmentText()
             findNavController().navigate(action)
         }
 

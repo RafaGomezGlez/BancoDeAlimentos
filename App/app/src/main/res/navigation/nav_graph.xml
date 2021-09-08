@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/presentationFragment">
+    app:startDestination="@id/feedFragment">
 
     <fragment
         android:id="@+id/mapaFragment"
@@ -47,36 +47,6 @@
         <argument
             android:name="name"
             app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/signInFragment"
-        android:name="tec.mx.bancodecomida.SignInFragment"
-        android:label="Sign in"
-        tools:layout="@layout/fragment_sign_in">
-        <action
-            android:id="@+id/action_signInFragment_to_feedFragment"
-            app:destination="@id/feedFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/presentationFragment"
-        android:name="tec.mx.bancodecomida.PresentationFragment"
-        android:label="presentation"
-        tools:layout="@layout/fragment_presentation">
-        <action
-            android:id="@+id/action_presentationFragment_to_logInFragment"
-            app:destination="@id/logInFragment" />
-        <action
-            android:id="@+id/action_presentationFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/logInFragment"
-        android:name="tec.mx.bancodecomida.LogInFragment"
-        android:label="Login"
-        tools:layout="@layout/fragment_log_in">
-        <action
-            android:id="@+id/action_logInFragment_to_feedFragment"
-            app:destination="@id/feedFragment" />
     </fragment>
     <fragment
         android:id="@+id/settings_profile"
