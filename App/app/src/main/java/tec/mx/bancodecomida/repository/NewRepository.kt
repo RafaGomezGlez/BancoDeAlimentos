@@ -7,63 +7,63 @@ class NewRepository {
         return listOf(
             New(
                 id = 0,
-                firstName = "John",
-                lastName = "Doe",
-                age = 20
+                title = "Nueva Comunidad",
+                author = "Erick Calderón",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
             New(
                 id = 1,
-                firstName = "Maria",
-                lastName = "Garcia",
-                age = 21
+                title = "Nueva Comunidad 2",
+                author = "Rafita Marquez",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
             New(
                 id = 2,
-                firstName = "James",
-                lastName = "Johnson",
-                age = 22
+                title = "Nueva Comunidad",
+                author = "Erick Calderón",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
             New(
                 id = 3,
-                firstName = "Michael",
-                lastName = "Brown",
-                age = 23
+                title = "Nueva Comunidad",
+                author = "Erick Calderón",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
             New(
                 id = 4,
-                firstName = "Robert",
-                lastName = "Davis",
-                age = 24
+                title = "Nueva Comunidad",
+                author = "Erick Calderón",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
             New(
                 id = 5,
-                firstName = "Jenifer",
-                lastName = "Miller",
-                age = 25
+                title = "Nueva Comunidad",
+                author = "Erick Calderón",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
             New(
                 id = 6,
-                firstName = "Sarah",
-                lastName = "Lopez",
-                age = 26
+                title = "Nueva Comunidad",
+                author = "Erick Calderón",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
             New(
                 id = 7,
-                firstName = "Charles",
-                lastName = "Wilson",
-                age = 27
+                title = "Nueva Comunidad",
+                author = "Erick Calderón",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
             New(
                 id = 8,
-                firstName = "Daniel",
-                lastName = "Taylor",
-                age = 28
+                title = "Nueva Comunidad",
+                author = "Erick Calderón",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
             New(
                 id = 9,
-                firstName = "Mark",
-                lastName = "Lee",
-                age = 29
+                title = "Nueva Comunidad",
+                author = "Erick Calderón",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico"
             ),
         )
     }
