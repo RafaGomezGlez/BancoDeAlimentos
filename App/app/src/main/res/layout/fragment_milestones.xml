@@ -10,110 +10,112 @@
         android:orientation="vertical"
         tools:context=".milestonesFragment">
 
-        <ProgressBar
-            android:id="@+id/progressBar4"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="335dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/location3" />
-
-        <ProgressBar
-            android:id="@+id/progressBar3"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="335dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.513"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/location2" />
-
         <TextView
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="@string/familias_alimentadas_de_méxico"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="78dp"
+            android:layout_marginBottom="21dp"
+            android:text="@string/familias_alimentadas_en_m_xico"
             android:textColor="#373737"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintBottom_toTopOf="@+id/imageFilterView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="148dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="40dp"
+            android:id="@+id/progressBarGuadalajara"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="73dp"
+            android:progressTint="#4CAF50"
+            android:scaleY="4"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTlaquepaque"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewGuadalajara" />
+
+        <ProgressBar
+            android:id="@+id/progressBarTlaquepaque"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="78dp"
+            android:progressTint="#4CAF50"
+            android:scaleY="4"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTonala"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTlaquepaque" />
+
+        <ProgressBar
+            android:id="@+id/progressBarTonala"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="117dp"
+            android:progressTint="#4CAF50"
+            android:scaleY="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTonala" />
+
+        <TextView
+            android:id="@+id/textViewGuadalajara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/guadalajara"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/progressBarGuadalajara"
+            app:layout_constraintStart_toStartOf="@+id/progressBarGuadalajara"
+            app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
+
+        <TextView
+            android:id="@+id/textViewTlaquepaque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/tlaquepaque"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/progressBarTlaquepaque"
+            app:layout_constraintStart_toStartOf="@+id/progressBarTlaquepaque"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarGuadalajara" />
+
+        <TextView
+            android:id="@+id/textViewTonala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="7dp"
+            android:text="@string/tonal"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/progressBarTonala"
+            app:layout_constraintStart_toStartOf="@+id/progressBarTonala"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarTlaquepaque" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageFilterView"
+            android:layout_width="165dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="23dp"
+            android:src="@drawable/comida"
+            app:civ_border_color="#9E9E9E"
+            app:civ_border_width="0.1dp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewGuadalajara"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
-
-        <ProgressBar
-            android:id="@+id/progressBar2"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="335dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.513"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/location1" />
-
-        <TextView
-            android:id="@+id/location1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="Guadalajara"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.116"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-        <TextView
-            android:id="@+id/location2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Tlaquepaque"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.115"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
-
-        <TextView
-            android:id="@+id/location3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Tonalá"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.105"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar3" />
-
-        <Button
-            android:id="@+id/donateButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Donate"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar4"
-            app:layout_constraintVertical_bias="0.239" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
