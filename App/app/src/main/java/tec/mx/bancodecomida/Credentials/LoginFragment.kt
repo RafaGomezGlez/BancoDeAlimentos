@@ -35,8 +35,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
             //Create an action that will be sent into FeedFragment
-            val action = LoginFragmentDirections.actionLoginFragmentTextToMainActivity(username,email,password)
-            findNavController().navigate(action)
+            //val action = LoginFragmentDirections.actionLoginFragmentTextToMainActivity(username,email,password)
+            //findNavController().navigate(action)
         }
 
         return view
