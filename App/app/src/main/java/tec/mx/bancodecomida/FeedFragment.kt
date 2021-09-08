@@ -1,6 +1,8 @@
 package tec.mx.bancodecomida
 
 import CustomItem
+import DisplayNews
+import LazyColumnDemo
 import ScrollableColumnDemo
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import tec.mx.bancodecomida.databinding.FragmentFeedBinding
-import tec.mx.bancodecomida.repository.NewRepository
+//import tec.mx.bancodecomida.repository.NewRepository
 
 //Using binding library in order to avoid using getElementById
 private var _binding: FragmentFeedBinding? = null
@@ -58,10 +60,13 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
 
 
         return ComposeView(requireContext()).apply {
-            val newRepository = NewRepository()
-            val getAllData = newRepository.getAllData()
+            //val newRepository = NewRepository()
+            //val getAllData = newRepository.getAllData()
             setContent {
-                LazyRow(
+                DisplayNews {
+
+                }
+                /*LazyRow(
 
                     contentPadding = PaddingValues(all = 20.dp),
                     horizontalArrangement = Arrangement.spacedBy(20.dp),
@@ -70,9 +75,11 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
                         .fillMaxHeight(0.2f)
                 ){
                     items(items = getAllData) { new ->
-                        ScrollableColumnDemo(new = new)
+                        LazyColumnDemo(new = new)
                     }
                 }
+
+                 */
             }
         }
     }
