@@ -18,7 +18,7 @@
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/idEdtAmount"
+            android:id="@+id/EdtAmount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
@@ -40,10 +40,10 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idBtnPay" />
+            app:layout_constraintTop_toBottomOf="@+id/BtnPay" />
 
         <Button
-            android:id="@+id/idBtnPay"
+            android:id="@+id/BtnPay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -52,7 +52,7 @@
             android:text="Make Payment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idEdtAmount" />
+            app:layout_constraintTop_toBottomOf="@+id/EdtAmount" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
