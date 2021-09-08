@@ -14,7 +14,11 @@
         android:id="@+id/milestonesFragment"
         android:name="tec.mx.bancodecomida.milestones"
         android:label="Milestones"
-        tools:layout="@layout/fragment_milestones" />
+        tools:layout="@layout/fragment_milestones" >
+        <action
+            android:id="@+id/action_milestonesFragment_to_donationFragment"
+            app:destination="@id/donationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="tec.mx.bancodecomida.settingsFragment"
@@ -68,4 +72,8 @@
         android:name="tec.mx.bancodecomida.Settings.settings_support"
         android:label="Support"
         tools:layout="@layout/fragment_settings_support" />
+    <fragment
+        android:id="@+id/donationFragment"
+        android:name="tec.mx.bancodecomida.donationFragment"
+        android:label="donationFragment" />
 </navigation>

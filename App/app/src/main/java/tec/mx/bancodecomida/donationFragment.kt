@@ -15,7 +15,7 @@ import tec.mx.bancodecomida.databinding.FragmentDonationBinding
 import tec.mx.bancodecomida.databinding.FragmentMilestonesBinding
 import androidx.core.app.ActivityCompat.startActivityForResult
 
-import org.graalvm.compiler.hotspot.replacements.HotSpotReplacementsUtil.config
+//import org.graalvm.compiler.hotspot.replacements.HotSpotReplacementsUtil.config
 
 import android.content.Intent
 import androidx.activity.result.registerForActivityResult
@@ -52,9 +52,14 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
 
          var edtAmount = binding.EdtAmount
 
+         //Iniciar servicio Paypal
+
+
+
          binding.BtnPay.setOnClickListener{
              getPayment()
          }
+
 
 
          return view
@@ -77,11 +82,7 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
         val intent = Intent(activity, PaymentActivity::class.java)
 
         //putting the paypal configuration to the intent
-
-        //putting the paypal configuration to the intent
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, "config")
-
-        // Putting paypal payment to the intent
 
         // Putting paypal payment to the intent
         intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payment)
@@ -91,7 +92,7 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
 
         // Starting the intent activity for result
         // the request code will be used on the method onActivityResult
-       //val resultCode = registerForActivityResult(intent, PAYPAL_REQUEST_CODE)
+       startActivityForResult(intent,PAYPAL_REQUEST_CODE)
     }
 
 

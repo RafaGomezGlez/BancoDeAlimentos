@@ -92,7 +92,7 @@ dependencies {
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.1'
     //Paypal integration
-    implementation 'com.paypal.sdk:paypal-android-sdk:2.14.2'
+    //implementation 'com.paypal.sdk:paypal-android-sdk:2.14.2'
 
 
 }
