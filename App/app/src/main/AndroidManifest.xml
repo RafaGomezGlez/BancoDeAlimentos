@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoDeComida">
         <activity
+            android:name=".InfoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NewsInformation"
+            android:exported="true" />
+        <activity
+            android:name=".InfoNews"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity

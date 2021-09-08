@@ -1,25 +1,15 @@
 package tec.mx.bancodecomida
 
-import CustomItem
+
 import DisplayNews
-import LazyColumnDemo
-import ScrollableColumnDemo
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.LocalContext
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import tec.mx.bancodecomida.databinding.FragmentFeedBinding
@@ -40,6 +30,8 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?
     ) : View? {
+
+
         //Create the object binding, it's similar to R. ...., whenever you want
         //to call a View in your xml file, just use binding.View
         _binding = FragmentFeedBinding.inflate(inflater, container, false)
@@ -58,51 +50,23 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
         }
 
 
-
         return ComposeView(requireContext()).apply {
-            //val newRepository = NewRepository()
-            //val getAllData = newRepository.getAllData()
+
             setContent {
                 DisplayNews {
-
-                }
-                /*LazyRow(
-
-                    contentPadding = PaddingValues(all = 20.dp),
-                    horizontalArrangement = Arrangement.spacedBy(20.dp),
-                    modifier = Modifier
-                        .width(50.dp)
-                        .fillMaxHeight(0.2f)
-                ){
-                    items(items = getAllData) { new ->
-                        LazyColumnDemo(new = new)
-                    }
+                    startActivity(InfoActivity.intent(getContext(),it))
                 }
 
-                 */
+
             }
         }
+
+
     }
 
-    /*@Composable
-    fun ColumnDemo() {
 
-        val newRepository = NewRepository()
-        val getAllData = newRepository.getAllData()
 
-        LazyRow(
 
-            contentPadding = PaddingValues(all = 20.dp),
-            horizontalArrangement = Arrangement.spacedBy(20.dp),
-            modifier = Modifier
-                .width(50.dp)
-                .fillMaxHeight(0.2f)
-        ){
-            items(items = getAllData) { new ->
-                CustomItem(new = new)
-            }
-        }
-    }*/
 
     // Method of the binding library
     override fun onDestroyView() {
