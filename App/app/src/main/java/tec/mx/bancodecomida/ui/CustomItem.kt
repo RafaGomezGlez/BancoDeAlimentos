@@ -115,7 +115,7 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
     Text(
         text = "Most Popular",
         modifier = Modifier
-            .padding(start = 10.dp,top = 340.dp),
+            .padding(start = 10.dp,top = 325.dp),
 
         style = MaterialTheme.typography.h5,
         fontWeight = FontWeight.Bold,
