@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 apply plugin: 'androidx.navigation.safeargs'
@@ -39,6 +40,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.1.0-alpha03'
+    }
+
     sourceSets {
         main {
             res {
@@ -56,6 +61,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'androidx.fragment:fragment:1.3.6'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -90,4 +96,10 @@ dependencies {
 
     // Image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Paypal integration
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.14.2'
+
+    //Google maps implementation
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
 }
