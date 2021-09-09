@@ -14,7 +14,7 @@ object NewsList {
                 title = "Nueva Comunidad",
                 author = "Erick Calderón",
                 description = "Nueva comunidad se suma al Banco de Alimentos de Mexico",
-                imageId = R.drawable.bancomx_logo_color,
+                imageId = R.drawable.presentation_background,
                 year = 2021
             ),
             New(
@@ -22,7 +22,7 @@ object NewsList {
                 title = "Nueva Comunidad 2",
                 author = "Rafita Marquez",
                 description = "Pepa",
-                imageId = R.drawable.bancomx_logo_color,
+                imageId = R.drawable.presentation_background,
                 year = 2021
             ),
             New(
@@ -30,7 +30,7 @@ object NewsList {
                 title = "Nueva Comunidad",
                 author = "Erick Calderón",
                 description = "said1",
-                imageId = R.drawable.bancomx_logo_color,
+                imageId = R.drawable.comida,
                 year = 2021
             ),
             New(

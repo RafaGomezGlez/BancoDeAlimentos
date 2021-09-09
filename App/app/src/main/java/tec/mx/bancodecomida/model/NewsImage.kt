@@ -22,9 +22,25 @@ fun NewsImage(new: New) {
         contentScale = ContentScale.Crop,
         modifier = Modifier
             .padding(4.dp)
-            .height(140.dp)
-            .width(100.dp)
+            .height(50.dp)
+            .width(50.dp)
             .clip(RoundedCornerShape(corner = CornerSize(10.dp)))
+
+    )
+}
+
+@Composable
+fun NewsImage2(new: New) {
+    Image(
+        painter = painterResource(id = new.imageId),
+        contentDescription = null,
+        contentScale = ContentScale.Crop,
+        modifier = Modifier
+            .padding(5.dp)
+            .height(220.dp)
+            .width(250.dp)
+            .clip(RoundedCornerShape(corner = CornerSize(10.dp)))
+
 
     )
 }
