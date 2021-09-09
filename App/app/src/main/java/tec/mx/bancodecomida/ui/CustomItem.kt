@@ -41,7 +41,7 @@ fun newsListItem(new: New, selectedItem: (New) -> Unit) {
                 modifier = Modifier
                     .padding(10.dp)
                     .fillMaxWidth(),
-                elevation = 5.dp,
+                elevation = 3.dp,
                 shape = RoundedCornerShape(corner = CornerSize(10.dp))
             ) {
                 Row(
@@ -49,12 +49,19 @@ fun newsListItem(new: New, selectedItem: (New) -> Unit) {
                         .padding(5.dp)
                         .fillMaxWidth()
 
-                        .clickable { selectedItem(new) },
+                        .clickable { selectedItem(new) }
+                        ,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    NewsImage(new = new)
-                    Column {
-                        Text(text = new.title, style = MaterialTheme.typography.h5,fontWeight = FontWeight.Bold)
+                    NewsImage(new = new )
+                    Column (
+                        modifier = Modifier
+                        .padding(start = 5.dp)
+                    ){
+
+                        Text(text = new.title,
+                            style = MaterialTheme.typography.h5,
+                            fontWeight = FontWeight.Bold)
                         Spacer(modifier = Modifier.height(0.dp))
                         Text(
                             text = new.author,

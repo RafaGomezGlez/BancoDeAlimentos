@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -19,7 +20,7 @@ fun NewsImage(new: New) {
     Image(
         painter = painterResource(id = new.imageId),
         contentDescription = null,
-        contentScale = ContentScale.Crop,
+        contentScale = ContentScale.Fit,
         modifier = Modifier
             .padding(4.dp)
             .height(50.dp)
