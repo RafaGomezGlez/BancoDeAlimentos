@@ -20,4 +20,6 @@
     <string name="guadalajara">guadalajara</string>
     <string name="tlaquepaque">tlaquepaque</string>
     <string name="tonal">tonala</string>
+    <string name="Log_Out" />
+    <string name="log_out">Log out</string>
 </resources>

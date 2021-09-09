@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "804514783275",
+    "project_id": "bancodealimentos-2f99b",
+    "storage_bucket": "bancodealimentos-2f99b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804514783275:android:a82dbcdd95ac657f688a6e",
+        "android_client_info": {
+          "package_name": "tec.mx.bancodecomida"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804514783275-emdo37lf2h2abl5suc2h15tegduj642p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tec.mx.bancodecomida",
+            "certificate_hash": "91495af0ed98c158e92f0b7d46daacac806c6e21"
+          }
+        },
+        {
+          "client_id": "804514783275-8tkhinll0c6ulq2kjgu33siubg1ijok0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvfxWOZkCUGqqS55BNnP49qcS_fD4ym6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804514783275-8tkhinll0c6ulq2kjgu33siubg1ijok0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

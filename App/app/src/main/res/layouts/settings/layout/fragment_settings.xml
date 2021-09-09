@@ -67,6 +67,20 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
+            android:id="@+id/logOutTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:text="@string/log_out"
+            android:textColor="#5C5C60"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/supportTextView"
+            app:layout_constraintVertical_bias="0.066" />
+
+        <TextView
             android:id="@+id/paymentTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,5 +105,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.817"
             app:srcCompat="@drawable/bancomx_logo_color" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

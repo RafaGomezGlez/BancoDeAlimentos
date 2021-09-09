@@ -1,11 +1,16 @@
 package tec.mx.bancodecomida
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import tec.mx.bancodecomida.Credentials.CredentialsActivity
 import tec.mx.bancodecomida.databinding.FragmentSettingsBinding
 
 //Using binding library in order to avoid using getElementById
@@ -17,7 +22,7 @@ class settingsFragment : Fragment(R.layout.fragment_settings){
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?
-    ) : View? {
+    ) : View {
         //Create the object binding, it's similar to R. ...., whenever you want
         //to call a View in your xml file, just use binding.View
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
@@ -39,6 +44,11 @@ class settingsFragment : Fragment(R.layout.fragment_settings){
         binding.supportTextView.setOnClickListener{
             val action = settingsFragmentDirections.actionSettingsFragmentToSettingsSupport()
             findNavController().navigate(action)
+        }
+        binding.logOutTextView.setOnClickListener{
+            Firebase.auth.signOut()
+            val activityIntent = Intent(activity as Activity, CredentialsActivity::class.java)
+            startActivity(activityIntent)
         }
 
         return view
