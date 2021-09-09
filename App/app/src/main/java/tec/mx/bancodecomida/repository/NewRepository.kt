@@ -13,7 +13,7 @@ object NewsList {
                 id = 0,
                 title = "Nueva Comunidad",
                 author = "Erick Calderón",
-                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico",
+                description = "Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico",
                 imageId = R.drawable.presentation_background,
                 year = 2021
             ),
@@ -91,3 +91,40 @@ object NewsList {
             ),
         )
     }
+
+object NewsList2 {
+    val new = listOf(
+        New(
+            id = 0,
+            title = "Nueva Comunidad",
+            author = "Erick Calderón",
+            description = "Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico Nueva comunidad se suma al Banco de Alimentos de Mexico",
+            imageId = R.drawable.presentation_background,
+            year = 2021
+        ),
+        New(
+            id = 1,
+            title = "Nueva Comunidad 2",
+            author = "Rafita Marquez",
+            description = "Pepa",
+            imageId = R.drawable.presentation_background,
+            year = 2021
+        ),
+        New(
+            id = 2,
+            title = "Nueva Comunidad",
+            author = "Erick Calderón",
+            description = "said1",
+            imageId = R.drawable.comida,
+            year = 2021
+        ),
+        New(
+            id = 3,
+            title = "Nueva Comunidad",
+            author = "Erick Calderón",
+            description = "powqikdpoqwjdpnqmwdponqmd",
+            imageId = R.drawable.bancomx_logo_color,
+            year = 2021
+        )
+    )
+}

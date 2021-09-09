@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -28,6 +29,8 @@ import tec.mx.bancodecomida.model.New
 import tec.mx.bancodecomida.model.NewsImage
 import tec.mx.bancodecomida.model.NewsImage2
 import tec.mx.bancodecomida.repository.NewsList
+import tec.mx.bancodecomida.repository.NewsList2
+import java.lang.Float.min
 
 
 @Composable
@@ -52,7 +55,7 @@ fun newsListItem(new: New, selectedItem: (New) -> Unit) {
                     NewsImage(new = new)
                     Column {
                         Text(text = new.title, style = MaterialTheme.typography.h5,fontWeight = FontWeight.Bold)
-                        Spacer(modifier = Modifier.height(20.dp))
+                        Spacer(modifier = Modifier.height(0.dp))
                         Text(
                             text = new.author,
                             style = MaterialTheme.typography.body1,
@@ -111,8 +114,10 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
 
 
 
+
     )
     val new = remember { NewsList.new }
+    val new2 = remember { NewsList2.new }
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.Center
@@ -166,8 +171,9 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
     }
 
 
+//ESTA EN NEW 2
 @Composable
-fun ViewMoreInfo(new: New) {
+fun ViewMoreInfo(new2: New) {
     val scrollState = rememberScrollState()
 
             Card(
@@ -175,6 +181,7 @@ fun ViewMoreInfo(new: New) {
                 elevation = 10.dp,
                 shape = RoundedCornerShape(corner = CornerSize(10.dp))
             ) {
+
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -182,33 +189,38 @@ fun ViewMoreInfo(new: New) {
                         .padding(10.dp)
                 ) {
                     Image(
-                        painter = painterResource(id = new.imageId),
+                        painter = painterResource(id = new2.imageId),
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clip(shape = RoundedCornerShape(4.dp)),
+                            .clip(shape = RoundedCornerShape(4.dp))
+                            .graphicsLayer {
+                                alpha = min(2f, 2 - (scrollState.value / 700f))
+                                translationY = -scrollState.value * 0.1f
+                            },
                         contentScale = ContentScale.Fit,
                         alignment = Alignment.Center
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = new.title,
+                        text = new2.title,
                         style = MaterialTheme.typography.h3,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = new.description,
+                        text = new2.description,
                         style = MaterialTheme.typography.h5
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = "Original release : ${new.year}",
+                        text = "Original release : ${new2.year}",
                         style = MaterialTheme.typography.h5
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = "IMDB : ${new.author}",
+                        text = "Author : ${new2.author}",
                         style = MaterialTheme.typography.h5,
                         fontStyle = FontStyle.Italic
                     )
@@ -220,7 +232,7 @@ fun ViewMoreInfo(new: New) {
 
 
 
-
+/*
 @Composable
 fun DisplayImageNews(selectedItem: (New) -> Unit) {
 
@@ -238,6 +250,8 @@ fun DisplayImageNews(selectedItem: (New) -> Unit) {
 
 }
 
+
+ */
 
 
 
