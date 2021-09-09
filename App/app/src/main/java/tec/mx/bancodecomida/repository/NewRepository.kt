@@ -115,15 +115,15 @@ object NewsList2 {
             title = "Nueva Comunidad",
             author = "Erick Calderón",
             description = "said1",
-            imageId = R.drawable.comida,
+            imageId = R.drawable.presentation_background,
             year = 2021
         ),
         New(
             id = 3,
             title = "Nueva Comunidad",
             author = "Erick Calderón",
-            description = "powqikdpoqwjdpnqmwdponqmd",
-            imageId = R.drawable.bancomx_logo_color,
+            description = "powqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmdpowqikdpoqwjdpnqmwdponqmd",
+            imageId = R.drawable.maxresdefault,
             year = 2021
         )
     )

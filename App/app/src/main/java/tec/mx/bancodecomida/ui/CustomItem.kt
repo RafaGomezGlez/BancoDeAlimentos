@@ -131,7 +131,7 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                 contentPadding = PaddingValues(horizontal = 0.dp, vertical = 8.dp)
             ) {
                 items(
-                    items = new,
+                    items = new2,
                     itemContent = {
                         newsListImage(new = it, selectedItem)
                     }
@@ -173,7 +173,7 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
 
 //ESTA EN NEW 2
 @Composable
-fun ViewMoreInfo(new2: New) {
+fun ViewMoreInfo(new: New) {
     val scrollState = rememberScrollState()
 
             Card(
@@ -189,38 +189,39 @@ fun ViewMoreInfo(new2: New) {
                         .padding(10.dp)
                 ) {
                     Image(
-                        painter = painterResource(id = new2.imageId),
+                        painter = painterResource(id = new.imageId),
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxWidth()
+                            .fillMaxHeight()
                             .clip(shape = RoundedCornerShape(4.dp))
                             .graphicsLayer {
                                 alpha = min(2f, 2 - (scrollState.value / 700f))
                                 translationY = -scrollState.value * 0.1f
                             },
-                        contentScale = ContentScale.Fit,
+                        contentScale = ContentScale.Crop,
                         alignment = Alignment.Center
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = new2.title,
+                        text = new.title,
                         style = MaterialTheme.typography.h3,
                         fontWeight = FontWeight.Bold,
 
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = new2.description,
+                        text = new.description,
                         style = MaterialTheme.typography.h5
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = "Original release : ${new2.year}",
+                        text = "Original release : ${new.year}",
                         style = MaterialTheme.typography.h5
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = "Author : ${new2.author}",
+                        text = "Author : ${new.author}",
                         style = MaterialTheme.typography.h5,
                         fontStyle = FontStyle.Italic
                     )

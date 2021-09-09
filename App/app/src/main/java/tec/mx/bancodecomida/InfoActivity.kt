@@ -27,7 +27,7 @@ class InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ViewMoreInfo(new2 = new)
+            ViewMoreInfo(new = new)
         }
     }
 }
