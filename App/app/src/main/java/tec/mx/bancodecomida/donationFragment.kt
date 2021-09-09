@@ -60,8 +60,6 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
              getPayment()
          }
 
-
-
          return view
      }
 
@@ -77,8 +75,6 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
         )
 
         // Creating Paypal Payment activity intent
-
-        // Creating Paypal Payment activity intent
         val intent = Intent(activity, PaymentActivity::class.java)
 
         //putting the paypal configuration to the intent
@@ -90,8 +86,6 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
         // Starting the intent activity for result
         // the request code will be used on the method onActivityResult
 
-        // Starting the intent activity for result
-        // the request code will be used on the method onActivityResult
        startActivityForResult(intent,PAYPAL_REQUEST_CODE)
     }
 
