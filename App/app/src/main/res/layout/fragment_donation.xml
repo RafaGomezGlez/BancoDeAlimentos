@@ -7,11 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--Edit text for entering the amount-->
-
-    <!--button for making a payment-->
-
-    <!--text view for displaying payment status-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
