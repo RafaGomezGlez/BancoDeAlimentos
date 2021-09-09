@@ -95,9 +95,9 @@ fun newsListImage(new: New, selectedItem: (New) -> Unit) {
 @Composable
 fun DisplayNews(selectedItem: (New) -> Unit) {
     Text(
-        text = "\n\n  Breaking News",
+        text = "Breaking News",
         modifier = Modifier
-            .height(250.dp),
+            .padding(start = 10.dp,top = 60.dp),
         style = MaterialTheme.typography.h5,
         fontWeight = FontWeight.Bold,
 
@@ -106,14 +106,12 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
         )
 
     Text(
-        text = "\n\n\n\n\n\n\n\n\n\n\n\n  Most Popular",
+        text = "Most Popular",
         modifier = Modifier
-            .height(250.dp),
+            .padding(start = 10.dp,top = 340.dp),
+
         style = MaterialTheme.typography.h5,
         fontWeight = FontWeight.Bold,
-
-
-
 
     )
     val new = remember { NewsList.new }
