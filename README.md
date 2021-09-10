@@ -1,5 +1,6 @@
-# TC2007B.2
-## Technologies Used:
+# TC2007B.2 Banco de Alimentos de Guadalajara Mobile app
+Technologies Used
+---------------
 ### Programming Languages
 - Kotlin
 ### Cloud services:
