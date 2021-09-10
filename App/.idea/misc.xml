@@ -13,15 +13,20 @@
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_credentials.xml" value="0.18" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_credentials2.xml" value="0.1" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_feed.xml" value="0.3645833333333333" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_info.xml" value="0.3351449275362319" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_info_news.xml" value="0.3351449275362319" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_log_in.xml" value="0.3625" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_map.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_milestones.xml" value="0.3645833333333333" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_news_information.xml" value="0.3351449275362319" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_settings.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/activity_sign_in.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_donation.xml" value="0.3351449275362319" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_feed.xml" value="0.33" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_log_in.xml" value="0.33" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_login_text.xml" value="0.26927083333333335" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_map_fragement_test.xml" value="0.3351449275362319" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_mapa.xml" value="0.5" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_milestones.xml" value="0.33" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_presentation.xml" value="0.33" />
@@ -35,6 +40,7 @@
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layout/fragment_sign_in_test.xml" value="0.26927083333333335" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layouts/credentials/layout/fragment_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layouts/milestones/layout/fragment_donation.xml" value="0.2713541666666667" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/layouts/settings/layout/fragment_settings_support.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/menu/draw_bottom_nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/PC NASUA/AndroidStudioProjects/NICE/TC2007B.2/App/app/src/main/res/layout/fragment_feed.xml" value="0.21927083333333333" />

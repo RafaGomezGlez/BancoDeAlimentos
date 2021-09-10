@@ -1,24 +1,18 @@
-package tec.mx.bancodecomida
-
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import tec.mx.bancodecomida.databinding.FragmentFeedBinding
-import com.paypal.android.sdk.payments.PayPalConfiguration
-import com.paypal.android.sdk.payments.PayPalPayment
-import com.paypal.android.sdk.payments.PayPalService
-import com.paypal.android.sdk.payments.PaymentActivity
-import com.paypal.android.sdk.payments.PaymentConfirmation
-import tec.mx.bancodecomida.databinding.FragmentDonationBinding
-import tec.mx.bancodecomida.databinding.FragmentMilestonesBinding
-import androidx.core.app.ActivityCompat.startActivityForResult
+package tec.mx.bancodecomida.Milestones
 
 //import org.graalvm.compiler.hotspot.replacements.HotSpotReplacementsUtil.config
 
 import android.content.Intent
-import androidx.activity.result.registerForActivityResult
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.paypal.android.sdk.payments.PayPalPayment
+import com.paypal.android.sdk.payments.PayPalService
+import com.paypal.android.sdk.payments.PaymentActivity
+import tec.mx.bancodecomida.R
+import tec.mx.bancodecomida.databinding.FragmentDonationBinding
 import java.math.BigDecimal
 
 
@@ -44,13 +38,13 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
 
      override fun onCreateView(inflater: LayoutInflater,
                                container: ViewGroup?,
-                               savedInstanceState: Bundle?): View? {
+                               savedInstanceState: Bundle?): View {
          //Create the object binding, it's similar to R. ...., whenever you want
          //to call a View in your xml file, just use binding.View
          _binding = FragmentDonationBinding.inflate(inflater, container, false)
          val view = binding.root
 
-         var edtAmount = binding.EdtAmount
+         //var edtAmount = binding.EdtAmount
 
          //Iniciar servicio Paypal
 
@@ -85,7 +79,6 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
 
         // Starting the intent activity for result
         // the request code will be used on the method onActivityResult
-
        startActivityForResult(intent,PAYPAL_REQUEST_CODE)
     }
 

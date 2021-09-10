@@ -1,6 +1,6 @@
-package tec.mx.bancodecomida.repository
+package tec.mx.bancodecomida.Feed.repository
 import tec.mx.bancodecomida.R
-import tec.mx.bancodecomida.model.New
+import tec.mx.bancodecomida.Feed.model.New
 
 
 /*class NewRepository {

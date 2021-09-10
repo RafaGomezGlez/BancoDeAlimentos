@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Milestones.donationFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,11 +13,12 @@
         android:layout_height="match_parent">
 
         <EditText
+            android:autofillHints="phone"
             android:id="@+id/EdtAmount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:hint="Enter Amount to be Paid"
+            android:hint="@string/enter_amount_to_be_paid"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +45,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginTop="10dp"
-            android:text="Make Payment"
+            android:text="@string/make_payment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/EdtAmount" />
