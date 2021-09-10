@@ -3,7 +3,7 @@ Technologies Used
 ---------------
 ### Programming Languages
 - Kotlin
-### Cloud services:
+### Cloud services
 - Firebase
   - Firebase authentication
   - Firestore
