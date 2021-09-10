@@ -52,7 +52,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
         )
             .addOnCompleteListener(activity as Activity) {
                 if(it.isSuccessful){
-                    val action = SignInFragmentDirections.actionSignInToMainActivity(binding.nameEditText.text.toString(), binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
+                    val action = SignInFragmentDirections.actionSignInToMainActivity(binding.firstNameEditText.text.toString(), binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
                     findNavController().navigate(action)
                     Log.d("FIREBASE", "Registro exitoso")
                 } else {
