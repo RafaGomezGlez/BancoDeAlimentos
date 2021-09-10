@@ -1,4 +1,4 @@
-package tec.mx.bancodecomida.model
+package tec.mx.bancodecomida.Feed.model
 
 
 import java.io.Serializable

@@ -22,4 +22,6 @@
     <string name="tonal">tonala</string>
     <string name="Log_Out" />
     <string name="log_out">Log out</string>
+    <string name="enter_amount_to_be_paid">Enter Amount to be Paid</string>
+    <string name="make_payment">Make Payment</string>
 </resources>

@@ -1,12 +1,12 @@
-package tec.mx.bancodecomida
+package tec.mx.bancodecomida.Feed
 
 import ViewMoreInfo
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
-import tec.mx.bancodecomida.model.New
+import androidx.appcompat.app.AppCompatActivity
+import tec.mx.bancodecomida.Feed.model.New
 
 class InfoActivity : AppCompatActivity() {
 
@@ -14,7 +14,7 @@ class InfoActivity : AppCompatActivity() {
     companion object{
         private const val newsId = "newid"
         fun intent(context: Context, new: New)=
-            Intent(context,InfoActivity::class.java).apply {
+            Intent(context, InfoActivity::class.java).apply {
                 putExtra(newsId, new)
             }
     }

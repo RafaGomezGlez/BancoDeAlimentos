@@ -1,13 +1,15 @@
 
-import androidx.compose.foundation.*
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
-import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -15,26 +17,21 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import tec.mx.bancodecomida.R
-import tec.mx.bancodecomida.model.New
-import tec.mx.bancodecomida.model.NewsImage
-import tec.mx.bancodecomida.model.NewsImage2
-import tec.mx.bancodecomida.repository.NewsList
-import tec.mx.bancodecomida.repository.NewsList2
+import tec.mx.bancodecomida.Feed.model.New
+import tec.mx.bancodecomida.Feed.model.NewsImage
+import tec.mx.bancodecomida.Feed.model.NewsImage2
+import tec.mx.bancodecomida.Feed.repository.NewsList
+import tec.mx.bancodecomida.Feed.repository.NewsList2
 import java.lang.Float.min
 
-
 @Composable
-fun newsListItem(new: New, selectedItem: (New) -> Unit) {
+internal fun NewsListItem(new: New, selectedItem: (New) -> Unit) {
 
 
             Card(
@@ -82,9 +79,8 @@ fun newsListItem(new: New, selectedItem: (New) -> Unit) {
 
             }
         }
-
 @Composable
-fun newsListImage(new: New, selectedItem: (New) -> Unit) {
+fun NewsListImage(new: New, selectedItem: (New) -> Unit) {
     Row(
         modifier = Modifier
             .padding(5.dp)
@@ -138,7 +134,7 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                 items(
                     items = new2,
                     itemContent = {
-                        newsListImage(new = it, selectedItem)
+                        NewsListImage(new = it, selectedItem)
                     }
                 )
         }
@@ -166,7 +162,7 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                 items(
                     items = new,
                     itemContent = {
-                        newsListItem(new = it, selectedItem)
+                        NewsListItem(new = it, selectedItem)
                     }
                 )
             }
@@ -234,32 +230,6 @@ fun ViewMoreInfo(new: New) {
                 }
             }
         }
-
-
-
-
-/*
-@Composable
-fun DisplayImageNews(selectedItem: (New) -> Unit) {
-
-    val new = remember { NewsList.new }
-    LazyRow(
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
-    ) {
-        items(
-            items = new,
-            itemContent = {
-                newsListImage(new = it, selectedItem)
-            }
-        )
-    }
-
-}
-
-
- */
-
-
 
 
 

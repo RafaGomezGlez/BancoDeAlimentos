@@ -74,6 +74,6 @@
         tools:layout="@layout/fragment_settings_support" />
     <fragment
         android:id="@+id/donationFragment"
-        android:name="tec.mx.bancodecomida.donationFragment"
+        android:name="tec.mx.bancodecomida.Milestones.donationFragment"
         android:label="donationFragment" />
 </navigation>

@@ -3,9 +3,10 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id "androidx.navigation.safeargs"
+
 }
 
-apply plugin: 'androidx.navigation.safeargs'
 apply plugin: 'com.google.gms.google-services'  // Google Services plugin
 
 
@@ -49,7 +50,7 @@ android {
     sourceSets {
         main {
             res {
-                srcDirs 'src\\main\\res', 'src\\main\\res\\layouts\\credentials', 'src\\main\\res\\layouts\\settings'
+                srcDirs 'src\\main\\res', 'src\\main\\res\\layouts\\credentials', 'src\\main\\res\\layouts\\settings', 'src\\main\\res\\layouts\\feed', 'src\\main\\res\\layouts\\milestones'
             }
         }
     }
@@ -61,11 +62,11 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
-    implementation 'androidx.fragment:fragment:1.3.6'
+    implementation 'androidx.fragment:fragment-ktx:1.3.6'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
@@ -96,7 +97,7 @@ dependencies {
     // Integration with ViewModels
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07'
     // UI Tests
-    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.1'
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.2'
 
     // Image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
