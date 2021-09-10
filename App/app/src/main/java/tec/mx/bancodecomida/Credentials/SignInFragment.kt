@@ -2,10 +2,17 @@ package tec.mx.bancodecomida.Credentials
 
 import android.app.Activity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.text.Editable
+import android.text.TextUtils
+import android.text.TextWatcher
 import android.util.Log
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -13,12 +20,27 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import tec.mx.bancodecomida.R
 import tec.mx.bancodecomida.databinding.FragmentSignInBinding
+import java.util.regex.Pattern
 
 //Using binding library in order to avoid using getElementById
 private var _binding: FragmentSignInBinding? = null
 private val binding get() = _binding!!
 private lateinit var auth: FirebaseAuth
 
+private lateinit var firstName: TextView
+private lateinit var firstNameError: TextView
+private lateinit var lastName: TextView
+private lateinit var lastNameError: TextView
+private lateinit var email: TextView
+private lateinit var emailError: TextView
+private lateinit var password: TextView
+private lateinit var passwordError: TextView
+private lateinit var signUpButton: Button
+
+private var firstNameIsValid : Boolean = false
+private var lastNameIsValid : Boolean = false
+private var emailIsValid : Boolean = false
+private var passwordIsValid : Boolean = false
 
 class SignInFragment : Fragment(R.layout.fragment_sign_in){
     //This is the correct syntax if we want to use binding library
@@ -35,6 +57,58 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
         // FeedFragment
         binding.buttonSignIn.setOnClickListener{
            signIn(view)
+        }
+
+        signUpButton = binding.buttonSignIn
+
+        firstName = binding.firstNameEditText
+        firstNameError = binding.firstNameErrorTextView
+        firstName.afterTextChangedDelayed {
+            if (firstName.text.length>1){
+                firstNameIsValid=true
+                firstNameError.text = ""
+            }else{
+                firstNameIsValid = false
+                firstNameError.text = "First name must be at least 2 characters long"
+            }
+            manageSignUpButton()
+        }
+
+        lastName = binding.lastNameEditText
+        lastNameError = binding.lastNameErrorTextView
+        lastName.afterTextChangedDelayed {
+            if (lastName.text.length>1){
+                lastNameIsValid=true
+                lastNameError.text = ""
+            }else{
+                lastNameIsValid = false
+                lastNameError.text = "Last name must be at least 2 characters long"
+            }
+            manageSignUpButton()
+        }
+
+        email = binding.emailEditText
+        emailError = binding.emailErrorTextView
+        email.afterTextChangedDelayed {
+            emailIsValid = isValidEmail(email.text.toString())
+            if (!emailIsValid){
+                emailError.text = "Invalid email address"
+            }else{
+                emailError.text = ""
+            }
+            manageSignUpButton()
+        }
+
+        password = binding.passwordEditText
+        passwordError = binding.passwordErrorTextView
+        password.afterTextChangedDelayed {
+            passwordIsValid = isValidPassword(password.text.toString())
+            if(!passwordIsValid){
+                passwordError.text = "Invalid password"
+            }else{
+                passwordError.text = ""
+            }
+            manageSignUpButton()
         }
 
         return view
@@ -60,6 +134,57 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
                     Log.w("FIREBASE", "Registro fracaso ${it.exception}")
                 }
             }
+    }
+
+    fun TextView.afterTextChangedDelayed(afterTextChanged: (String) -> Unit) {
+        this.addTextChangedListener(object : TextWatcher {
+            var timer: CountDownTimer? = null
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun afterTextChanged(editable: Editable?) {
+                timer?.cancel()
+                timer = object : CountDownTimer(1000, 1500) {
+                    override fun onTick(millisUntilFinished: Long) {}
+                    override fun onFinish() {
+                        afterTextChanged.invoke(editable.toString())
+                    }
+                }.start()
+            }
+        })
+    }
+
+    private fun isValidEmail(email: String): Boolean =
+        email.isNotEmpty() && Pattern.compile(
+            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                    "\\@" +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                    "(" +
+                    "\\." +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{1,25}" +
+                    ")+"
+        ).matcher(email).matches()
+
+    private fun isValidPassword(password: String): Boolean {
+        val passwordREGEX = Pattern.compile("^" +
+                "(?=.*[0-9])" +         //at least 1 digit
+                "(?=.*[a-z])" +         //at least 1 lower case letter
+                "(?=.*[A-Z])" +         //at least 1 upper case letter
+                "(?=.*[a-zA-Z])" +      //any letter
+                "(?=\\S+$)" +           //no white spaces
+                ".{8,}" +               //at least 8 characters
+                "$");
+        return passwordREGEX.matcher(password).matches()
+    }
+
+    private fun manageSignUpButton(){
+        if(firstNameIsValid && lastNameIsValid && emailIsValid && passwordIsValid){
+            signUpButton.isEnabled = true
+        }else{
+            signUpButton.isEnabled = false
+        }
     }
 
 }
