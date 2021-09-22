@@ -22,13 +22,16 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import tec.mx.bancodecomida.Feed.model.New
 import tec.mx.bancodecomida.Feed.model.NewsImage
 import tec.mx.bancodecomida.Feed.model.NewsImage2
 import tec.mx.bancodecomida.Feed.repository.NewsList
+import tec.mx.bancodecomida.Feed.repository.NewsList.new
 import tec.mx.bancodecomida.Feed.repository.NewsList2
 import java.lang.Float.min
+import tec.mx.bancodecomida.R
 
 @Composable
 internal fun NewsListItem(new: New, selectedItem: (New) -> Unit) {
@@ -94,6 +97,8 @@ fun NewsListImage(new: New, selectedItem: (New) -> Unit) {
     }
 
 }
+
+
 
 @Composable
 fun DisplayNews(selectedItem: (New) -> Unit) {
@@ -232,4 +237,133 @@ fun ViewMoreInfo(new: New) {
         }
 
 
+
+
+
+
+
+@Preview
+@Composable
+fun NewsListImagePreview(){
+    Row(
+        modifier = Modifier
+            .padding(5.dp)
+            .fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        NewsImage2(New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021))
+        NewsImage2(New(2,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021))
+    }
+
+}
+
+@Preview
+@Composable
+fun NewsListItemPreview() {
+    New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021)
+
+    Card(
+        modifier = Modifier
+            .padding(10.dp)
+            .fillMaxWidth(),
+        elevation = 3.dp,
+        shape = RoundedCornerShape(corner = CornerSize(10.dp))
+    ) {
+        Row(
+            modifier = Modifier
+                .padding(5.dp)
+                .fillMaxWidth()
+
+            ,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            NewsImage(new = New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021) )
+            Column (
+                modifier = Modifier
+                    .padding(start = 5.dp)
+            ){
+
+
+                Text(text = "Testing",
+                    style = MaterialTheme.typography.h5,
+                    fontWeight = FontWeight.Bold)
+                Spacer(modifier = Modifier.height(0.dp))
+                Text(
+                    text = "Erick",
+                    style = MaterialTheme.typography.body1,
+                    maxLines = 3,
+                    fontStyle = FontStyle.Italic
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(text = 2021.toString(), style = MaterialTheme.typography.caption)
+                }
+
+            }
+
+        }
+
+    }
+}
+
+@Preview
+@Composable
+fun ViewMoreInfoPreview() {
+    val scrollState = rememberScrollState()
+
+    Card(
+        modifier = Modifier.padding(10.dp),
+        elevation = 10.dp,
+        shape = RoundedCornerShape(corner = CornerSize(10.dp))
+    ) {
+
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .verticalScroll(scrollState)
+                .padding(10.dp)
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.maxresdefault),
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight()
+                    .clip(shape = RoundedCornerShape(4.dp))
+                    .graphicsLayer {
+                        alpha = min(2f, 2 - (scrollState.value / 700f))
+                        translationY = -scrollState.value * 0.1f
+                    },
+                contentScale = ContentScale.Crop,
+                alignment = Alignment.Center
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "Testing",
+                style = MaterialTheme.typography.h3,
+                fontWeight = FontWeight.Bold,
+
+                )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "LOREMDOASKDOASKD",
+                style = MaterialTheme.typography.h5
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "Original release : ${2021}",
+                style = MaterialTheme.typography.h5
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "Author : ${"Erick"}",
+                style = MaterialTheme.typography.h5,
+                fontStyle = FontStyle.Italic
+            )
+
+        }
+    }
+}
 
