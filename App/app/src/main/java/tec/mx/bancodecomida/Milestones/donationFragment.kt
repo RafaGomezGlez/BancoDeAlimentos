@@ -4,13 +4,22 @@ package tec.mx.bancodecomida.Milestones
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
-import com.paypal.android.sdk.payments.PayPalPayment
-import com.paypal.android.sdk.payments.PayPalService
-import com.paypal.android.sdk.payments.PaymentActivity
+import com.paypal.checkout.approve.OnApprove
+import com.paypal.checkout.createorder.CreateOrder
+import com.paypal.checkout.createorder.CurrencyCode
+import com.paypal.checkout.createorder.OrderIntent
+import com.paypal.checkout.createorder.UserAction
+import com.paypal.checkout.order.Amount
+import com.paypal.checkout.order.AppContext
+import com.paypal.checkout.order.Order
+import com.paypal.checkout.order.PurchaseUnit
+import com.paypal.checkout.paymentbutton.PayPalButton
 import tec.mx.bancodecomida.R
 import tec.mx.bancodecomida.databinding.FragmentDonationBinding
 import java.math.BigDecimal
@@ -28,13 +37,8 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
 
     private var param1: String? = null
     private var param2: String? = null
-
-    val clientKey = "Adxi8mN3MdFwqPYdz_qK_VW4KxKYZtR0dTxpwhyDitzWm7AJMy_sUBGCob1r_FVf9Cwsco8HRpRFFt95"
-    val PAYPAL_REQUEST_CODE = 117
-
-    val PayPalConfiguration = com.paypal.android.sdk.payments.PayPalConfiguration()
-        .environment("ENVIRONMENT_SANDBOX").clientId(clientKey)
-
+    lateinit var payPalButton: PayPalButton
+    lateinit var donationAmount: String
 
      override fun onCreateView(inflater: LayoutInflater,
                                container: ViewGroup?,
@@ -44,43 +48,37 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
          _binding = FragmentDonationBinding.inflate(inflater, container, false)
          val view = binding.root
 
-         //var edtAmount = binding.EdtAmount
+         val payPalButton=binding.payPalButton
+         val donationAmount = binding.EdtAmount
+         payPalButton.setup(
+             createOrder = CreateOrder { createOrderActions ->
+                 val order = Order(
+                     intent = OrderIntent.CAPTURE,
+                     appContext = AppContext(
+                         userAction = UserAction.PAY_NOW
+                     ),
+                     purchaseUnitList = listOf(
+                         PurchaseUnit(
+                             amount = Amount(
+                                 currencyCode = CurrencyCode.MXN,
+                                 value = "200" //Por el momento solo se pueden hacer donaciones de 200 pesos.
+                             )
+                         )
+                     )
+                 )
 
-         //Iniciar servicio Paypal
-
-
-
-         binding.BtnPay.setOnClickListener{
-             getPayment()
-         }
-
+                 createOrderActions.create(order)
+             },
+             onApprove = OnApprove { approval ->
+                 approval.orderActions.capture { captureOrderResult ->
+                     Log.i("CaptureOrder", "CaptureOrderResult: $captureOrderResult")
+                 }
+             }
+         )
          return view
      }
 
-    private fun getPayment() {
-        val amount: String = binding.EdtAmount.text.toString()
 
-        // Creating a paypal payment on below line.
-
-        // Creating a paypal payment on below line.
-        val payment = PayPalPayment(
-            BigDecimal(amount), "Mex", "Donation",
-            PayPalPayment.PAYMENT_INTENT_SALE
-        )
-
-        // Creating Paypal Payment activity intent
-        val intent = Intent(activity, PaymentActivity::class.java)
-
-        //putting the paypal configuration to the intent
-        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, "config")
-
-        // Putting paypal payment to the intent
-        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payment)
-
-        // Starting the intent activity for result
-        // the request code will be used on the method onActivityResult
-       startActivityForResult(intent,PAYPAL_REQUEST_CODE)
-    }
 
 
     // Method of the binding library

@@ -11,7 +11,14 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.paypal.checkout.PayPalCheckout
+import com.paypal.checkout.config.CheckoutConfig
+import com.paypal.checkout.config.Environment
+import com.paypal.checkout.config.SettingsConfig
+import com.paypal.checkout.createorder.CurrencyCode
+import com.paypal.checkout.createorder.UserAction
 import tec.mx.bancodecomida.databinding.ActivityMainBinding
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     //Navigation Bar
     private lateinit var appBarConfiguration: AppBarConfiguration
-
+    public lateinit var YOUR_CLIENT_ID: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +61,20 @@ class MainActivity : AppCompatActivity() {
         //The toolbar will be updated when the destination changes
         binding.bottomNav.setupWithNavController(navController)
 
+        //Paypal config
+        YOUR_CLIENT_ID="AcCy607igEQA6IOd5OOp7rP7vZzFzgToV919o4kCPQ6K8TulbjY1XgA8zx8CLmvRRbWZW02F8E1iG5y5"
+        val config = CheckoutConfig(
+            application = application,
+            clientId = YOUR_CLIENT_ID,
+            environment = Environment.SANDBOX,
+            returnUrl = "tec.mx.bancodecomida://paypalpay",
+            currencyCode = CurrencyCode.MXN,
+            userAction = UserAction.PAY_NOW,
+            settingsConfig = SettingsConfig(
+                loggingEnabled = true
+            )
+        )
+        PayPalCheckout.setConfig(config)
 
     }
 
