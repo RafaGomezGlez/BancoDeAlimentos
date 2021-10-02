@@ -1,22 +1,24 @@
-package tec.mx.bancodecomida.Feed.model
+package tec.mx.bancodecomida.Feed.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import tec.mx.bancodecomida.Feed.model.New
 import tec.mx.bancodecomida.R
 
 
 @Composable
-fun NewsImage(new: New) {
+fun NewsImageSmall(new: New) {
     Image(
         painter = painterResource(id = new.imageId),
         contentDescription = null,
@@ -29,23 +31,8 @@ fun NewsImage(new: New) {
 
     )
 }
-
-@Preview
 @Composable
-fun NewsImagePreview(){
-    NewsImage(
-        New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021))
-}
-
-@Preview
-@Composable
-fun NewsImage2Preview(){
-NewsImage2(
-    New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021))
-}
-
-@Composable
-fun NewsImage2(new: New) {
+fun NewsImageBig(new: New) {
     Image(
         painter = painterResource(id = new.imageId),
         contentDescription = null,
@@ -58,4 +45,20 @@ fun NewsImage2(new: New) {
 
 
     )
+}
+
+@Preview
+@Composable
+fun NewsImageSmallPreview(){
+    NewsImageSmall(
+        New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021)
+    )
+}
+
+@Preview
+@Composable
+fun NewsImageBigPreview(){
+NewsImageBig(
+    New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021)
+)
 }

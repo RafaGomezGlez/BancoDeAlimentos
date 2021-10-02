@@ -10,4 +10,6 @@ data class New (
     val description: String,
     val imageId : Int,
     val year : Int
-): Serializable
+): Serializable {
+    constructor() : this(0, "", "", "", 2, 0)
+}

@@ -1,11 +1,27 @@
 package tec.mx.bancodecomida.Feed.repository
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.callbackFlow
 import tec.mx.bancodecomida.R
 import tec.mx.bancodecomida.Feed.model.New
-
 
 /*class NewRepository {
     fun getAllData(): List <New>{
         return listOf(*/
+
+class NewRepository{
+    private val firestore  = FirebaseFirestore.getInstance()
+
+    fun getNewDetails() = callbackFlow {
+        val collection = firestore.collection("New")
+        val snapshotListener = collection.addSnapshotListener{ value, error ->
+            offer(value)
+        }
+        awaitClose{
+            snapshotListener.remove()
+        }
+    }
+}
 
 object NewsList {
     val new = listOf(

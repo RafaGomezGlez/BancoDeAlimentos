@@ -1,12 +1,12 @@
 package tec.mx.bancodecomida.Feed
 
-import ViewMoreInfo
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import tec.mx.bancodecomida.Feed.model.New
+import tec.mx.bancodecomida.Feed.ui.ClickableNew
 
 class InfoActivity : AppCompatActivity() {
 
@@ -27,7 +27,7 @@ class InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ViewMoreInfo(new = new)
+            ClickableNew().newContent(new = new)
         }
     }
 }
