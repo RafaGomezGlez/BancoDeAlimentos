@@ -9,6 +9,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -17,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester.Companion.createRefs
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -24,6 +26,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ConstraintLayout
 import tec.mx.bancodecomida.Feed.model.New
 import tec.mx.bancodecomida.Feed.model.NewsImage
 import tec.mx.bancodecomida.Feed.model.NewsImage2
@@ -102,7 +105,27 @@ fun NewsListImage(new: New, selectedItem: (New) -> Unit) {
 
 @Composable
 fun DisplayNews(selectedItem: (New) -> Unit) {
-    Text(
+
+    ConstraintLayout {
+        // Create references for the composables to constrain
+        val (box1,box2, text, text1) = createRefs()
+
+
+
+        // Assign reference "text" to the Text composable
+        // and constrain it to the bottom of the Button composable
+        Text(
+            text = "Breaking News",
+            style = MaterialTheme.typography.h5,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.constrainAs(text) {
+            top.linkTo(parent.top, margin = 65.dp )
+        })
+
+
+
+
+    /*Text(
         text = "Breaking News",
         modifier = Modifier
             .padding(start = 10.dp,top = 60.dp),
@@ -113,7 +136,9 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
 
         )
 
-    Text(
+     */
+
+    /*Text(
         text = "Most Popular",
         modifier = Modifier
             .padding(start = 10.dp,top = 325.dp),
@@ -122,10 +147,15 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
         fontWeight = FontWeight.Bold,
 
     )
+
+     */
     val new = remember { NewsList.new }
     val new2 = remember { NewsList2.new }
     Box(
-        modifier = Modifier.fillMaxWidth(),
+        //modifier = Modifier.fillMaxWidth(),
+        modifier =  Modifier.constrainAs(box1){
+            top.linkTo(text.bottom, margin = 0.dp )
+         },
         contentAlignment = Alignment.Center
     ) {
         Box(
@@ -145,13 +175,22 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
         }
     }
     }
+        Text(
+            text = "Most Popular",
+            style = MaterialTheme.typography.h5,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.constrainAs(text1) {
+                bottom.linkTo(box1.bottom, margin = 225.dp )
+            })
 
 
-    Spacer(modifier = Modifier.height(300.dp))
-    Box(
-        modifier = Modifier.fillMaxWidth(),
 
-        contentAlignment = Alignment.BottomCenter
+        Spacer(modifier = Modifier.height(300.dp))
+   Box(
+        modifier =  Modifier.constrainAs(box2){
+            top.linkTo(text1.bottom, margin = 10.dp )
+        },
+        contentAlignment = Alignment.Center
 
 
     ){
@@ -174,8 +213,12 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
         }
     }
 
+
+
     }
 
+
+}
 
 //ESTA EN NEW 2
 @Composable
@@ -367,3 +410,40 @@ fun ViewMoreInfoPreview() {
     }
 }
 
+/*@Composable
+fun DecoupledConstraintLayout() {
+    BoxWithConstraints {
+        val constraints = if (minWidth < 600.dp) {
+            decoupledConstraints(margin = 16.dp) // Portrait constraints
+        } else {
+            decoupledConstraints(margin = 32.dp) // Landscape constraints
+        }
+
+        ConstraintLayout(constraints) {
+            Button(
+                onClick = { /* Do something */ },
+                modifier = Modifier.layoutId("button")
+            ) {
+                Text("Button")
+            }
+
+            Text("Text", Modifier.layoutId("text"))
+        }
+    }
+}
+
+private fun decoupledConstraints(margin: Dp): ConstraintSet {
+    return ConstraintSet {
+        val button = createRefFor("button")
+        val text = createRefFor("text")
+
+        constrain(button) {
+            top.linkTo(parent.top, margin = margin)
+        }
+        constrain(text) {
+            top.linkTo(button.bottom, margin)
+        }
+    }
+}
+
+ */
