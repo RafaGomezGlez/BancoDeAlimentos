@@ -118,8 +118,12 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
             text = "Breaking News",
             style = MaterialTheme.typography.h5,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.constrainAs(text) {
+            modifier = Modifier
+                .padding(start = 10.dp)
+                .constrainAs(text) {
             top.linkTo(parent.top, margin = 65.dp )
+
+
         })
 
 
@@ -153,7 +157,9 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
     val new2 = remember { NewsList2.new }
     Box(
         //modifier = Modifier.fillMaxWidth(),
-        modifier =  Modifier.constrainAs(box1){
+        modifier =  Modifier
+
+            .constrainAs(box1){
             top.linkTo(text.bottom, margin = 0.dp )
          },
         contentAlignment = Alignment.Center
@@ -179,7 +185,9 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
             text = "Most Popular",
             style = MaterialTheme.typography.h5,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.constrainAs(text1) {
+            modifier = Modifier
+                .padding(start = 10.dp)
+                .constrainAs(text1) {
                 bottom.linkTo(box1.bottom, margin = 225.dp )
             })
 
