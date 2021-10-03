@@ -10,17 +10,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
 import tec.mx.bancodecomida.Feed.model.New
-import tec.mx.bancodecomida.R
 
 
 @Composable
 fun NewsImageSmall(new: New) {
     Image(
-        painter = painterResource(id = new.imageId),
+        painter = rememberImagePainter(new.imageId),
         contentDescription = null,
         contentScale = ContentScale.Fit,
         modifier = Modifier
@@ -34,7 +33,7 @@ fun NewsImageSmall(new: New) {
 @Composable
 fun NewsImageBig(new: New) {
     Image(
-        painter = painterResource(id = new.imageId),
+        painter = rememberImagePainter(new.imageId),
         contentDescription = null,
         contentScale = ContentScale.Crop,
         modifier = Modifier
@@ -51,7 +50,7 @@ fun NewsImageBig(new: New) {
 @Composable
 fun NewsImageSmallPreview(){
     NewsImageSmall(
-        New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021)
+        New(1,"Testing","Erick","LOREMDOASKDOASKD", "https://firebasestorage.googleapis.com/v0/b/bancodealimentos-2f99b.appspot.com/o/presentation_background.png?alt=media&token=d4a4ba7e-ebd1-4ef4-9204-12c760fd0933",2021)
     )
 }
 
@@ -59,6 +58,6 @@ fun NewsImageSmallPreview(){
 @Composable
 fun NewsImageBigPreview(){
 NewsImageBig(
-    New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.maxresdefault,2021)
+    New(1,"Testing","Erick","LOREMDOASKDOASKD", "https://firebasestorage.googleapis.com/v0/b/bancodealimentos-2f99b.appspot.com/o/presentation_background.png?alt=media&token=d4a4ba7e-ebd1-4ef4-9204-12c760fd0933",2021)
 )
 }

@@ -1,19 +1,15 @@
 package tec.mx.bancodecomida
 
 
-import tec.mx.bancodecomida.Feed.ui.DisplayNews
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import tec.mx.bancodecomida.Feed.InfoActivity
-import tec.mx.bancodecomida.Feed.repository.NewRepository
-import tec.mx.bancodecomida.Feed.viewmodel.NewsViewModel
+import tec.mx.bancodecomida.Feed.ui.DisplayNews
 import tec.mx.bancodecomida.databinding.FragmentFeedBinding
 
 //Using binding library in order to avoid using getElementById
@@ -44,11 +40,8 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
                 }
             }
         }
+
     }
-
-
-
-
 
     // Method of the binding library
     override fun onDestroyView() {
@@ -56,14 +49,3 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
         _binding = null
     }
 }
-
-class NewsVireModelFactory(private val newsRepo: NewRepository) : ViewModelProvider.Factory{
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(NewsViewModel::class.java)){
-            return NewsViewModel(newsRepo) as T
-        }
-        throw IllegalStateException()
-    }
-
-}
-

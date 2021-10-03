@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
 import tec.mx.bancodecomida.Feed.model.New
 import tec.mx.bancodecomida.R
 import java.lang.Float
@@ -43,7 +44,7 @@ class ClickableNew {
                     .padding(10.dp)
             ) {
                 Image(
-                    painter = painterResource(id = new.imageId),
+                    painter = rememberImagePainter(new.imageId),
                     contentDescription = null,
                     modifier = Modifier
                         .fillMaxWidth()

@@ -15,7 +15,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import tec.mx.bancodecomida.Feed.model.New
-import tec.mx.bancodecomida.R
 
 class ListItem {
     @Composable
@@ -65,7 +64,7 @@ class ListItem {
     @Preview
     @Composable
     fun NewsListItemPreview() {
-        New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.comida,2021)
+        New(1,"Testing","Erick","LOREMDOASKDOASKD", "https://firebasestorage.googleapis.com/v0/b/bancodealimentos-2f99b.appspot.com/o/presentation_background.png?alt=media&token=d4a4ba7e-ebd1-4ef4-9204-12c760fd0933",2021)
 
         Card(
             modifier = Modifier
@@ -80,7 +79,7 @@ class ListItem {
                     .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                NewsImageSmall(new = New(1,"Testing","Erick","LOREMDOASKDOASKD", R.drawable.comida,2021) )
+                NewsImageSmall(new = New(1,"Testing","Erick","LOREMDOASKDOASKD","https://firebasestorage.googleapis.com/v0/b/bancodealimentos-2f99b.appspot.com/o/presentation_background.png?alt=media&token=d4a4ba7e-ebd1-4ef4-9204-12c760fd0933",2021) )
                 Column (
                     modifier = Modifier
                         .padding(start = 5.dp)
