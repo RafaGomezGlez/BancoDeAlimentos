@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAMX</title>
+    <link href="estilos.css" rel="stylesheet">
+    <link
+        href="http://fonts.cdnfonts.com/css/gotham?styles=17581,17582,17583,17584,17585,17587,17586,17579,17588,17580,17589,17591,17592,17595,17590,17593,17594,17596"
+        rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/noticia.js"></script>
+</head>
+
+<body>
+    <div id="contenedorPrincipalNoticia" class="contenedorPrincipal centrarHijos">
+        <div id="tarjetaPrincipalNoticia" class="tarjetaPrincipal">
+            <div id="noticiaEncabezado" class="centrarHijos redondeado">
+                <h1 id="noticiaEncabezadoTexto">Subir nueva noticia</h1>
+            </div>
+            <div id="noticiaCuerpo">
+                <div id="contenedorTitulo">
+                    <input type="text" name="" id="campoTitulo" class="campo campoNoticia redondeado"
+                        placeholder="título">
+                </div>
+                <div id="contenedorContenido">
+                    <textarea name="" id="campoContenido" class="campo campoNoticia redondeado"
+                        placeholder="contenido"></textarea>
+                </div>
+                <div id="contenedorMultimedia">
+                    <div id="contenedorCuadroImagen" class="centrarHijos">
+                        <div id="cuadroImagen" class="redondeado centrarHijos">
+                            <span id="missingImage">?</span>
+                        </div>
+                    </div>
+                    <div id="contenedorBotonCargarImagen" class="centrarHijos">
+                        <button id="botonCargarImagen" class="boton redondeado">cargar</button>
+                    </div>
+                </div>
+            </div>
+            <div id="noticiaPie">
+                <button class="boton botonPie redondeado">subir</button>
+            </div>
+        </div>
+    </div>
+    <input type="file" name="" id="botonCargarImagenFalso" accept="image/x-png,image/jpeg" hidden>
+</body>
+
+</html>
