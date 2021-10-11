@@ -23,8 +23,7 @@ allprojects{
     repositories {
         google()
         jcenter()
-        mavenCentral()
-
+        maven { url 'https://jitpack.io' }
         maven {
             url  "https://cardinalcommerceprod.jfrog.io/artifactory/android"
             credentials {
@@ -34,7 +33,7 @@ allprojects{
                 password mavenPassword
             }
         }
-        maven { url 'https://jitpack.io' }
+        mavenCentral()
 
     }
 }
