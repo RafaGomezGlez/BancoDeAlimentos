@@ -7,6 +7,7 @@ Technologies Used
 - Firebase
   - Firebase authentication
   - Firestore
+  - Firebase Storage
 ### API's
 - Paypal API
 - Google Maps API
