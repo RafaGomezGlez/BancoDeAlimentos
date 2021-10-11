@@ -7,6 +7,7 @@ Technologies Used
 - Firebase
   - Firebase authentication
   - Firestore
+  - Firebase Storage
 ### API's
 - Paypal API
 - Google Maps API
@@ -16,3 +17,5 @@ Technologies Used
 - View Binding / Data Binding
 - Navigation
 - CircleImageView
+- Coil Compose
+- JetFirestore
