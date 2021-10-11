@@ -75,7 +75,6 @@ class MainActivity : AppCompatActivity() {
             )
         )
         PayPalCheckout.setConfig(config)
-
     }
 
     //We're connecting AppCompatActivity with NavigationUI, this means

@@ -61,7 +61,7 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
                          PurchaseUnit(
                              amount = Amount(
                                  currencyCode = CurrencyCode.MXN,
-                                 value = "200" //Por el momento solo se pueden hacer donaciones de 200 pesos.
+                                 value = "200" //Por el momento solo se pueden hacer donaciones de la cantidad especificada aqui.
                              )
                          )
                      )
