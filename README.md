@@ -16,3 +16,5 @@ Technologies Used
 - View Binding / Data Binding
 - Navigation
 - CircleImageView
+- Coil Compose
+- JetFirestore
