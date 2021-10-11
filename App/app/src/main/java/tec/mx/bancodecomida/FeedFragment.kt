@@ -1,17 +1,15 @@
 package tec.mx.bancodecomida
 
 
-import DisplayNews
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import tec.mx.bancodecomida.Feed.InfoActivity
+import tec.mx.bancodecomida.Feed.ui.DisplayNews
 import tec.mx.bancodecomida.databinding.FragmentFeedBinding
 
 //Using binding library in order to avoid using getElementById
@@ -35,19 +33,6 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
         //to call a View in your xml file, just use binding.View
         _binding = FragmentFeedBinding.inflate(inflater, container, false)
 
-        //Listener to the button, in order to see the changes and verify the data has
-        // been updated
-        binding.button.setOnClickListener{
-            if(arguments != null) {
-                binding.textViewUsername.text = args.name
-                binding.textViewEmail.text = args.email
-                binding.textViewPassword.text = args.password
-            }else{
-                Toast.makeText(activity, "Please long press the key", Toast.LENGTH_LONG ).show()
-            }
-        }
-
-
         return ComposeView(requireContext()).apply {
             setContent {
                 DisplayNews {
@@ -55,18 +40,12 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
                 }
             }
         }
+
     }
-
-
-
-
 
     // Method of the binding library
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-    
-
 }
-

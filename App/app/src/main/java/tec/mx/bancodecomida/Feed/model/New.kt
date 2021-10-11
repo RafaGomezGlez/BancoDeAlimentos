@@ -8,6 +8,8 @@ data class New (
     val title: String,
     val author: String,
     val description: String,
-    val imageId : Int,
+    val imageId : String,
     val year : Int
-): Serializable
+): Serializable {
+    constructor() : this(0, "", "", "", "", 0)
+}
