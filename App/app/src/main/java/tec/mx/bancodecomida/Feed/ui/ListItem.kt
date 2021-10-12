@@ -22,17 +22,15 @@ class ListItem {
         Card(
             modifier = Modifier
                 .padding(10.dp)
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .clickable { selectedItem(new) },
             elevation = 3.dp,
             shape = RoundedCornerShape(corner = CornerSize(10.dp))
         ) {
             Row(
                 modifier = Modifier
                     .padding(5.dp)
-                    .fillMaxWidth()
-
-                    .clickable { selectedItem(new) }
-                ,
+                    .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 NewsImageSmall(new = new )

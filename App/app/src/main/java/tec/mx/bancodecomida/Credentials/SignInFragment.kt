@@ -8,9 +8,7 @@ import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Log
 import android.util.Patterns
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -48,6 +46,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
                               container: ViewGroup?,
                               savedInstanceState: Bundle?
     ) : View {
+
+
         //Create the object binding, it's similar to R. ...., whenever you want
         //to call a View in your xml file, just use binding.View
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
@@ -58,8 +58,6 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
         binding.buttonSignIn.setOnClickListener{
            signIn(view)
         }
-
-        signUpButton = binding.buttonSignIn
 
         firstName = binding.firstNameEditText
         firstNameError = binding.firstNameErrorTextView

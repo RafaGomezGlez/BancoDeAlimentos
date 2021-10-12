@@ -35,6 +35,7 @@ class PresentationFragment : Fragment(R.layout.fragment_presentation) {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?
     ) : View? {
+
         //Create the object binding, it's similar to R. ...., whenever you want
         //to call a View in your xml file, just use binding.View
         _binding = FragmentPresentationBinding.inflate(inflater, container, false)
