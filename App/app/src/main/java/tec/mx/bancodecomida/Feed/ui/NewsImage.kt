@@ -21,7 +21,7 @@ fun NewsImageSmall(new: New) {
     Image(
         painter = rememberImagePainter(new.imageId),
         contentDescription = null,
-        contentScale = ContentScale.Fit,
+        contentScale = ContentScale.Crop,
         modifier = Modifier
             .padding(4.dp)
             .height(50.dp)
