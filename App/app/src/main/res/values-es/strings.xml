@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BancoDeComida</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Correo</string>
+    <string name="show_data">Mostrar datos</string>
+    <string name="mapa">Mapa</string>
+    <string name="settings">Ajustes</string>
+    <string name="profile">Perfil</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="support">Soporte</string>
+    <string name="payment">Pago</string>
+    <string name="todo">Por hacer</string>
+    <string name="familias_alimentadas_en_mexico">Familias alimentadas de México</string>
+    <string name="Name">Nombre</string>
+    <string name="Email_Addres" />
+    <string name="Email_Address" />
+    <string name="guadalajara">Guadalajara</string>
+    <string name="tlaquepaque">Tlaquepaque</string>
+    <string name="tonal">Tonala</string>
+    <string name="Log_Out" />
+    <string name="log_out">Salir</string>
+    <string name="enter_amount_to_be_paid">Ingrese el monto a pagar</string>
+    <string name="make_payment">Realizar pago</string>
+    <string name="change_language_text">Cambiar idioma</string>
+    <string name="GetStarted">Crear cuenta</string>
+    <string name="LogIn">Ya tengo cuenta</string>
+</resources>

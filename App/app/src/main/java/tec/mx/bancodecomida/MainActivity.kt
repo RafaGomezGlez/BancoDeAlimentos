@@ -1,6 +1,13 @@
 package tec.mx.bancodecomida
 
+import android.content.Context
+import android.content.DialogInterface
+import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -17,7 +24,7 @@ import com.paypal.checkout.config.SettingsConfig
 import com.paypal.checkout.createorder.CurrencyCode
 import com.paypal.checkout.createorder.UserAction
 import tec.mx.bancodecomida.databinding.ActivityMainBinding
-
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     //Navigation Bar
     private lateinit var appBarConfiguration: AppBarConfiguration
     public lateinit var YOUR_CLIENT_ID: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +82,8 @@ class MainActivity : AppCompatActivity() {
             )
         )
         PayPalCheckout.setConfig(config)
+
+
     }
 
     //We're connecting AppCompatActivity with NavigationUI, this means
