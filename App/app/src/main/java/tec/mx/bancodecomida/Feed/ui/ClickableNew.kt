@@ -28,17 +28,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import coil.compose.rememberImagePainter
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.glide.GlideImage
 import tec.mx.bancodecomida.Feed.model.New
 import tec.mx.bancodecomida.R
-import java.lang.Float
 import java.lang.Float.min
 
 class ClickableNew {
     @Composable
-    fun newContent(new: New) {
+    fun NewContent(new: New) {
         val scrollState = rememberScrollState()
         Log.d("ImageId", new.imageId)
         ConstraintLayout {
@@ -48,7 +46,7 @@ class ClickableNew {
             ) {
                 GlideImage(
                     imageModel = new.imageId,
-                    circularReveal = CircularReveal(duration = 250),
+                    circularReveal = CircularReveal(duration = 300),
                     modifier = Modifier
                         .fillMaxWidth()
                         .graphicsLayer {
@@ -113,10 +111,9 @@ class ClickableNew {
 
     @Preview
     @Composable
-    fun newContentPreview() {
+    fun NewContentPreview() {
         val scrollState = rememberScrollState()
         ConstraintLayout {
-            val (image, column) = createRefs()
             Column(
                 modifier = Modifier
                     .verticalScroll(scrollState)

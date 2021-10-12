@@ -27,7 +27,7 @@ class InfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ClickableNew().newContent(new = new)
+            ClickableNew().NewContent(new = new)
         }
     }
 }
