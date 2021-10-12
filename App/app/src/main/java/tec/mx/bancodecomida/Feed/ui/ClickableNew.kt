@@ -30,13 +30,11 @@ class ClickableNew {
     @Composable
     fun newContent(new: New) {
         val scrollState = rememberScrollState()
-
         Card(
             modifier = Modifier.padding(10.dp),
             elevation = 10.dp,
             shape = RoundedCornerShape(corner = CornerSize(10.dp))
         ) {
-
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
