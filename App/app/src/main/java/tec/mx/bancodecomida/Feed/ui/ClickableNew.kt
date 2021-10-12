@@ -2,6 +2,7 @@ package tec.mx.bancodecomida.Feed.ui
 
 import android.graphics.Paint
 import android.text.Layout
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -28,31 +29,32 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberImagePainter
+import com.skydoves.landscapist.CircularReveal
+import com.skydoves.landscapist.glide.GlideImage
 import tec.mx.bancodecomida.Feed.model.New
 import tec.mx.bancodecomida.R
 import java.lang.Float
 import java.lang.Float.min
 
 class ClickableNew {
-    //ESTA EN NEW 2
     @Composable
     fun newContent(new: New) {
         val scrollState = rememberScrollState()
+        Log.d("ImageId", new.imageId)
         ConstraintLayout {
-            val (image, column) = createRefs()
             Column(
                 modifier = Modifier
                     .verticalScroll(scrollState)
             ) {
-                Image(
-                    painter = rememberImagePainter(new.imageId),
-                    contentDescription = null,
+                GlideImage(
+                    imageModel = new.imageId,
+                    circularReveal = CircularReveal(duration = 250),
                     modifier = Modifier
                         .fillMaxWidth()
                         .graphicsLayer {
-                            alpha = min(1f, 1 - (scrollState.value / 600f))
-                            translationY = -scrollState.value * 0.1f
-                        },
+                        alpha = min(1f, 1 - (scrollState.value / 600f))
+                        translationY = -scrollState.value * 0.1f
+                    },
                     contentScale = ContentScale.Crop,
                     alignment = Alignment.Center
                 )
