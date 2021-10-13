@@ -21,6 +21,8 @@
             android:hint="@string/enter_amount_to_be_paid"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
+            android:text="@string/enter_amount_to_be_paid"
+            android:textColor="#AEAEAE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

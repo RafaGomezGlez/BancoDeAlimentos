@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BancoDeComida</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+    <string name="recent_news">Noticias recientes</string>
+    <string name="most_popular">Más popular</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Correo</string>
+    <string name="donate">Donar</string>
+    <string name="show_data">Mostrar datos</string>
+    <string name="mapa">Mapa</string>
+    <string name="settings">Ajustes</string>
+    <string name="profile">Perfil</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="support">Soporte</string>
+    <string name="payment">Pagos</string>
+    <string name="payment_method">Métodos de pago</string>
+    <string name="payment_history">Historial de pagos</string>
+    <string name="email_notifications">Notificaciones por correo</string>
+    <string name="donations">Donaciones</string>
+    <string name="feed_news">Noticias del feed</string>
+    <string name="milestones_news">Noticias de campañas</string>
+    <string name="report_a_problem">Reportar un problema</string>
+    <string name="help_service">Servicio de ayuda</string>
+    <string name="use_conditions">Condiciones de uso</string>
+    <string name="privacy_policies">Políticas de privacidad</string>
+    <string name="todo">Por hacer</string>
+    <string name="familias_alimentadas_en_mexico">Familia alimentadas en México</string>
+    <string name="name">Nombre</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="guadalajara">Guadalajara</string>
+    <string name="tlaquepaque">Tlaquepaque</string>
+    <string name="tonala">Tonalá</string>
+    <string name="Log_Out" />
+    <string name="log_in">Entrar a cuenta</string>
+    <string name="log_in_2">Entrar</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="signUp">Crear cuenta</string>
+    <string name="create_account">Crear una cuenta</string>
+    <string name="enter_amount_to_be_paid">Ingrese el monto a pagar</string>
+    <string name="make_payment">Realizar pago</string>
+    <string name="change_language_text">en | ES</string>
+</resources>

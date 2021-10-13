@@ -97,17 +97,5 @@ class CredentialsActivity : AppCompatActivity() {
         }
     }
 
-    <TextView
-    android:id="@+id/text_changeLanguage"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:text="Change language"
-    android:textColor="@color/purple_500"
-    android:textSize="15sp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.947"
-    app:layout_constraintStart_toStartOf="parent" />
 
 */
