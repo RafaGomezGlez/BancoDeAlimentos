@@ -12,16 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
+        <TextView
             android:id="@+id/EdtAmount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="71dp"
+            android:layout_marginTop="93dp"
+            android:layout_marginBottom="75dp"
             android:autofillHints="phone"
-            android:hint="@string/enter_amount_to_be_paid"
-            android:inputType="numberDecimal"
             android:minHeight="48dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="$0.00 MX"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/donate100"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +40,83 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/EdtAmount"
-            app:layout_constraintVertical_bias="0.109" />
+            app:layout_constraintVertical_bias="0.771" />
+
+        <Button
+            android:id="@+id/donate100"
+            android:layout_width="110dp"
+            android:layout_height="67dp"
+            android:text="$100"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.734"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.352" />
+
+        <Button
+            android:id="@+id/donate50"
+            android:layout_width="110dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="75dp"
+            android:text="$50"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.265"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EdtAmount"
+            app:layout_constraintVertical_bias="0.033" />
+
+        <Button
+            android:id="@+id/donate200"
+            android:layout_width="110dp"
+            android:layout_height="67dp"
+            android:text="$200"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.265"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/donate50"
+            app:layout_constraintVertical_bias="0.085" />
+
+        <Button
+            android:id="@+id/donate1000"
+            android:layout_width="110dp"
+            android:layout_height="67dp"
+            android:text="$1000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.662" />
+
+        <Button
+            android:id="@+id/donate500"
+            android:layout_width="110dp"
+            android:layout_height="67dp"
+            android:text="$500"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.734"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/donate100"
+            app:layout_constraintVertical_bias="0.085" />
+
+        <Button
+            android:id="@+id/updateFirestore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Firebase test"
+            app:layout_constraintBottom_toTopOf="@+id/donate1000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EdtAmount"
+            app:layout_constraintVertical_bias="0.1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
