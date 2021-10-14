@@ -87,7 +87,7 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
                          PurchaseUnit(
                              amount = Amount(
                                  currencyCode = CurrencyCode.MXN,
-                                 value = "200" //Por el momento solo se pueden hacer donaciones de la cantidad especificada aqui.
+                                 value = donationAmount.toString()//Por el momento solo se pueden hacer donaciones de la cantidad especificada aqui.
                              )
                          )
                      )
@@ -171,7 +171,7 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
     private fun saveFirestore(donationAmount: Int) {
         val db = FirebaseFirestore.getInstance()
         val moneyAccount : MutableMap<Int, Any> = HashMap()
-        moneyAccount["totalMoney"] = donationAmount
+        //moneyAccount["totalMoney"] = donationAmount
     }
 
     // Method of the binding library

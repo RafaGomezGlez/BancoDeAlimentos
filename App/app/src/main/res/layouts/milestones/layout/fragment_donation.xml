@@ -24,7 +24,6 @@
             android:textAlignment="center"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/donate100"
-            android:text="@string/enter_amount_to_be_paid"
             android:textColor="#AEAEAE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
