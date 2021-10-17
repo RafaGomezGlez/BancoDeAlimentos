@@ -35,7 +35,6 @@ class CredentialsActivity : AppCompatActivity() {
 
         // Initialize Firebase Auth
         auth = Firebase.auth
-
         val currentUser = auth.currentUser
 
         if (currentUser != null){

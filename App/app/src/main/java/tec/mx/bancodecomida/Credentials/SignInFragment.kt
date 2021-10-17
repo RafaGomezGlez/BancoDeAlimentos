@@ -1,4 +1,4 @@
-package tec.mx.bancodecomida.Credentials
+    package tec.mx.bancodecomida.Credentials
 
 import android.app.Activity
 import android.os.Bundle
@@ -15,7 +15,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import tec.mx.bancodecomida.Credentials.Model.User
 import tec.mx.bancodecomida.R
 import tec.mx.bancodecomida.databinding.FragmentSignInBinding
 import java.util.regex.Pattern
@@ -24,16 +26,6 @@ import java.util.regex.Pattern
 private var _binding: FragmentSignInBinding? = null
 private val binding get() = _binding!!
 private lateinit var auth: FirebaseAuth
-
-private lateinit var firstName: TextView
-private lateinit var firstNameError: TextView
-private lateinit var lastName: TextView
-private lateinit var lastNameError: TextView
-private lateinit var email: TextView
-private lateinit var emailError: TextView
-private lateinit var password: TextView
-private lateinit var passwordError: TextView
-private lateinit var signUpButton: Button
 
 private var firstNameIsValid : Boolean = false
 private var lastNameIsValid : Boolean = false
@@ -59,8 +51,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
            signIn(view)
         }
 
-        firstName = binding.firstNameEditText
-        firstNameError = binding.firstNameErrorTextView
+        val firstName = binding.firstNameEditText
+        val firstNameError = binding.firstNameErrorTextView
         firstName.afterTextChangedDelayed {
             if (firstName.text.length>1){
                 firstNameIsValid=true
@@ -72,8 +64,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
             manageSignUpButton()
         }
 
-        lastName = binding.lastNameEditText
-        lastNameError = binding.lastNameErrorTextView
+        val lastName = binding.lastNameEditText
+        val lastNameError = binding.lastNameErrorTextView
         lastName.afterTextChangedDelayed {
             if (lastName.text.length>1){
                 lastNameIsValid=true
@@ -85,8 +77,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
             manageSignUpButton()
         }
 
-        email = binding.emailEditText
-        emailError = binding.emailErrorTextView
+        val email = binding.emailEditText
+        val emailError = binding.emailErrorTextView
         email.afterTextChangedDelayed {
             emailIsValid = isValidEmail(email.text.toString())
             if (!emailIsValid){
@@ -97,8 +89,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
             manageSignUpButton()
         }
 
-        password = binding.passwordEditText
-        passwordError = binding.passwordErrorTextView
+        val password = binding.passwordEditText
+        val passwordError = binding.passwordErrorTextView
         password.afterTextChangedDelayed {
             passwordIsValid = isValidPassword(password.text.toString())
             if(!passwordIsValid){
@@ -118,12 +110,15 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
     }
 
     fun signIn(view: View?){
+        val db = Firebase.firestore
         auth = Firebase.auth
 
         Firebase.auth.createUserWithEmailAndPassword(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString()
         )
             .addOnCompleteListener(activity as Activity) {
                 if(it.isSuccessful){
+                    val user = User(binding.firstNameEditText.text.toString() , binding.lastNameEditText.text.toString(), binding.emailEditText.text.toString())
+                    db.collection("Users").document().set(user)
                     val action = SignInFragmentDirections.actionSignInToMainActivity(binding.firstNameEditText.text.toString(), binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
                     findNavController().navigate(action)
                     Log.d("FIREBASE", "Registro exitoso")
@@ -179,9 +174,9 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
 
     private fun manageSignUpButton(){
         if(firstNameIsValid && lastNameIsValid && emailIsValid && passwordIsValid){
-            signUpButton.isEnabled = true
+            binding.buttonSignIn.isEnabled = true
         }else{
-            signUpButton.isEnabled = false
+            binding.buttonSignIn.isEnabled = false
         }
     }
 
