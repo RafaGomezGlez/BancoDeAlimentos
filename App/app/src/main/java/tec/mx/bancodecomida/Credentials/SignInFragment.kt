@@ -173,11 +173,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
     }
 
     private fun manageSignUpButton(){
-        if(firstNameIsValid && lastNameIsValid && emailIsValid && passwordIsValid){
-            binding.buttonSignIn.isEnabled = true
-        }else{
-            binding.buttonSignIn.isEnabled = false
-        }
+        binding.buttonSignIn.isEnabled = firstNameIsValid && lastNameIsValid && emailIsValid && passwordIsValid
     }
 
 }
