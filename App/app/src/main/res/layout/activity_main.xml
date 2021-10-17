@@ -38,6 +38,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/draw_bottom_nav_menu"/>
 
+        <!--app:itemIconTint="@drawable/bottom_nav_icon_selector"
+        app:itemTextColor="@drawable/bottom_nav_icon_selector"-->
+
         <TextView
             android:id="@+id/text_changeLanguage"
             android:layout_width="wrap_content"
