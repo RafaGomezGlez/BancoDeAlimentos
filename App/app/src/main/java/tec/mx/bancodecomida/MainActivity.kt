@@ -4,8 +4,11 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -36,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     //Navigation Bar
     private lateinit var appBarConfiguration: AppBarConfiguration
-    public lateinit var YOUR_CLIENT_ID: String
+    lateinit var YOUR_CLIENT_ID: String
 
     private lateinit var text_changeLanguage: TextView
     private lateinit var editor: SharedPreferences.Editor
@@ -55,6 +58,9 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        //Change color of statusbar
+        val window: Window = this.getWindow()
+        window.statusBarColor = Color.parseColor("#ce0e2d")
 
         //Declare the navHostFragment that has the destinations of our navigation component
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -91,12 +97,12 @@ class MainActivity : AppCompatActivity() {
         PayPalCheckout.setConfig(config)
 
         // Language config
-        LoadLocale();
+        LoadLocale()
 
         text_changeLanguage = findViewById(R.id.text_changeLanguage)
-        text_changeLanguage.setOnClickListener(View.OnClickListener {
-            openDialogForLanguageChange();
-        })
+        text_changeLanguage.setOnClickListener {
+            openDialogForLanguageChange()
+        }
 
     }
 
@@ -104,19 +110,19 @@ class MainActivity : AppCompatActivity() {
         val list = arrayOf("English", "Español")
         val alertDialog = AlertDialog.Builder(this)
         alertDialog.setTitle("Seleccionar idioma")
-        alertDialog.setSingleChoiceItems(list, -1, DialogInterface.OnClickListener { dialog, i ->
-            if(i == 0) {
+        alertDialog.setSingleChoiceItems(list, -1) { dialog, i ->
+            if (i == 0) {
                 setLocale("en")
                 recreate()
-            } else if(i == 1) {
+            } else if (i == 1) {
                 setLocale("es")
                 recreate()
             }
-        })
+        }
 
-        alertDialog.setNeutralButton("Cancelar", DialogInterface.OnClickListener { dialog, which ->
+        alertDialog.setNeutralButton("Cancelar") { dialog, which ->
             dialog.cancel()
-        })
+        }
 
         val mDialog = alertDialog.create()
         mDialog.show()
@@ -126,7 +132,7 @@ class MainActivity : AppCompatActivity() {
         val local = Locale(language)
         Locale.setDefault(local)
         val config = Configuration()
-        config.locale = local;
+        config.setLocale(local)
 
         baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
 
