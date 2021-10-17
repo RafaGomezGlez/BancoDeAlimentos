@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.navArgs
 import tec.mx.bancodecomida.Feed.InfoActivity
 import tec.mx.bancodecomida.Feed.ui.DisplayNews
