@@ -26,12 +26,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/reportProblemTextView"
+            android:id="@+id/useConditionsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="36dp"
-            android:text="@string/report_a_problem"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/use_conditions"
             android:textColor="#5C5C60"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -39,36 +39,10 @@
             app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
         <TextView
-            android:id="@+id/helpServiceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="28dp"
-            android:text="@string/help_service"
-            android:textColor="#5C5C60"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/reportProblemTextView" />
-
-        <TextView
-            android:id="@+id/useConditionsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/use_conditions"
-            android:textColor="#5C5C60"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/helpServiceTextView" />
-
-        <TextView
             android:id="@+id/dataPoliciesTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
+            android:layout_marginStart="44dp"
             android:layout_marginTop="20dp"
             android:text="@string/privacy_policies"
             android:textColor="#5C5C60"

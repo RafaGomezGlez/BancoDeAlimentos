@@ -39,32 +39,17 @@
             app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
         <TextView
-            android:id="@+id/notificationsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="28dp"
-            android:text="@string/notifications"
-            android:textColor="#5C5C60"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/paymentTextView" />
-
-        <TextView
             android:id="@+id/supportTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
             android:text="@string/support"
             android:textColor="#5C5C60"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/notificationsTextView"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/profileTextView" />
 
         <TextView
             android:id="@+id/logOutTextView"
@@ -78,20 +63,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/supportTextView"
-            app:layout_constraintVertical_bias="0.066" />
-
-        <TextView
-            android:id="@+id/paymentTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/payment"
-            android:textColor="#5C5C60"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileTextView" />
+            app:layout_constraintVertical_bias="0.057" />
 
         <ImageView
             android:id="@+id/imageView"

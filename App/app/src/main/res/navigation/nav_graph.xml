@@ -28,12 +28,6 @@
             android:id="@+id/action_settingsFragment_to_settings_profile"
             app:destination="@id/settings_profile" />
         <action
-            android:id="@+id/action_settingsFragment_to_settings_payment"
-            app:destination="@id/settings_payment" />
-        <action
-            android:id="@+id/action_settingsFragment_to_settings_notifications"
-            app:destination="@id/settings_notifications" />
-        <action
             android:id="@+id/action_settingsFragment_to_settings_support"
             app:destination="@id/settings_support" />
     </fragment>
@@ -57,16 +51,6 @@
         android:name="tec.mx.bancodecomida.Settings.settings_profile"
         android:label="@string/profile"
         tools:layout="@layout/fragment_settings_profile" />
-    <fragment
-        android:id="@+id/settings_payment"
-        android:name="tec.mx.bancodecomida.Settings.settings_payment"
-        android:label="Payment"
-        tools:layout="@layout/fragment_settings_payment" />
-    <fragment
-        android:id="@+id/settings_notifications"
-        android:name="tec.mx.bancodecomida.Settings.settings_notifications"
-        android:label="Notifications"
-        tools:layout="@layout/fragment_settings_notifications" />
     <fragment
         android:id="@+id/settings_support"
         android:name="tec.mx.bancodecomida.Settings.settings_support"

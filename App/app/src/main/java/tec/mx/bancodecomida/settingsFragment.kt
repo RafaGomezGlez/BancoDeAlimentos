@@ -33,14 +33,6 @@ class settingsFragment : Fragment(R.layout.fragment_settings){
             val action = settingsFragmentDirections.actionSettingsFragmentToSettingsProfile()
             findNavController().navigate(action)
         }
-        binding.paymentTextView.setOnClickListener{
-            val action = settingsFragmentDirections.actionSettingsFragmentToSettingsPayment()
-            findNavController().navigate(action)
-        }
-        binding.notificationsTextView.setOnClickListener{
-            val action = settingsFragmentDirections.actionSettingsFragmentToSettingsNotifications()
-            findNavController().navigate(action)
-        }
         binding.supportTextView.setOnClickListener{
             val action = settingsFragmentDirections.actionSettingsFragmentToSettingsSupport()
             findNavController().navigate(action)
