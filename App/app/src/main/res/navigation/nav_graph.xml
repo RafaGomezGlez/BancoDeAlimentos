@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/mapaFragment"
         android:name="tec.mx.bancodecomida.mapa"
-        android:label="Map"
+        android:label="@string/mapa"
         tools:layout="@layout/fragment_mapa" />
     <fragment
         android:id="@+id/milestonesFragment"
         android:name="tec.mx.bancodecomida.milestones"
-        android:label="Milestones"
+        android:label="@string/milestones_news"
         tools:layout="@layout/fragment_milestones" >
         <action
             android:id="@+id/action_milestonesFragment_to_donationFragment"
@@ -22,8 +22,7 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="tec.mx.bancodecomida.settingsFragment"
-        android:label="Settings"
-        tools:layout="@layout/fragment_settings" >
+        android:label="@string/settings">
         <action
             android:id="@+id/action_settingsFragment_to_settings_profile"
             app:destination="@id/settings_profile" />
@@ -34,7 +33,7 @@
     <fragment
         android:id="@+id/feedFragment"
         android:name="tec.mx.bancodecomida.FeedFragment"
-        android:label="Feed"
+        android:label="@string/feed_news"
         tools:layout="@layout/fragment_feed">
         <argument
             android:name="password"
@@ -54,11 +53,11 @@
     <fragment
         android:id="@+id/settings_support"
         android:name="tec.mx.bancodecomida.Settings.settings_support"
-        android:label="Support"
+        android:label="@string/support"
         tools:layout="@layout/fragment_settings_support" />
     <fragment
         android:id="@+id/donationFragment"
         android:name="tec.mx.bancodecomida.Milestones.donationFragment"
-        android:label="Donation"
+        android:label="@string/donate"
         tools:layout="@layout/fragment_donation" />
 </navigation>

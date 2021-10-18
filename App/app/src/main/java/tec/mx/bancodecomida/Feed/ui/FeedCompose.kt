@@ -7,6 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -16,6 +17,7 @@ import com.google.firebase.firestore.Query
 import com.jet.firestore.JetFirestore
 import com.jet.firestore.getListOfObjects
 import tec.mx.bancodecomida.Feed.model.New
+import tec.mx.bancodecomida.R
 
 
 @Composable
@@ -37,7 +39,7 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
             // and constrain it to the bottom of the Button composable
 
             Text(
-                text = "Breaking News",
+                stringResource(R.string.recent_news),
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
@@ -68,7 +70,7 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                 }
             }
             Text(
-                text = "Most Popular",
+                stringResource(R.string.most_popular),
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier

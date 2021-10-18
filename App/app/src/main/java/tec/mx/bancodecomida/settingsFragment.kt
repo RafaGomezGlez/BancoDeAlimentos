@@ -6,10 +6,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 import tec.mx.bancodecomida.Credentials.CredentialsActivity
 import tec.mx.bancodecomida.databinding.FragmentSettingsBinding
 
@@ -36,6 +40,9 @@ class settingsFragment : Fragment(R.layout.fragment_settings){
         binding.supportTextView.setOnClickListener{
             val action = settingsFragmentDirections.actionSettingsFragmentToSettingsSupport()
             findNavController().navigate(action)
+        }
+        binding.changeLangTextView.setOnClickListener{
+            (activity as MainActivity?)?.openDialogForLanguageChange()
         }
         binding.logOutTextView.setOnClickListener{
             Firebase.auth.signOut()

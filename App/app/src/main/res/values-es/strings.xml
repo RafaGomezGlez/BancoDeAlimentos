@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BancoDeComida</string>
+    <string name="app_name">Banco de Alimentos</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hola fragmento en blanco</string>
     <string name="recent_news">Noticias recientes</string>
@@ -11,6 +11,7 @@
     <string name="donate">Donar</string>
     <string name="show_data">Mostrar datos</string>
     <string name="mapa">Mapa</string>
+    <string name="home">Inicio</string>
     <string name="settings">Ajustes</string>
     <string name="profile">Perfil</string>
     <string name="notifications">Notificaciones</string>
@@ -20,8 +21,8 @@
     <string name="payment_history">Historial de pagos</string>
     <string name="email_notifications">Notificaciones por correo</string>
     <string name="donations">Donaciones</string>
-    <string name="feed_news">Noticias del feed</string>
-    <string name="milestones_news">Noticias de campañas</string>
+    <string name="feed_news">Noticias</string>
+    <string name="milestones_news">Campañas</string>
     <string name="report_a_problem">Reportar un problema</string>
     <string name="help_service">Servicio de ayuda</string>
     <string name="use_conditions">Condiciones de uso</string>
@@ -42,5 +43,7 @@
     <string name="create_account">Crear una cuenta</string>
     <string name="enter_amount_to_be_paid">Ingrese el monto a pagar</string>
     <string name="make_payment">Realizar pago</string>
-    <string name="change_language_text">en | ES</string>
+    <string name="select_lang">Seleccionar idioma</string>
+    <string name="cancel">Cancelar</string>
+    <string name="change_language_text">Cambiar idioma</string>
 </resources>

@@ -3,17 +3,17 @@
     <item
         android:id="@+id/feedFragment"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home"/>
+        android:title="@string/home" />
     <item
         android:id="@+id/mapaFragment"
         android:icon="@drawable/ic_baseline_map_24"
-        android:title="Map"/>
+        android:title="@string/mapa" />
     <item
-        android:id= "@+id/milestonesFragment"
+        android:id="@+id/milestonesFragment"
         android:icon="@drawable/ic_baseline_flag_24"
-        android:title="Milestones"/>
+        android:title="@string/milestones_news" />
     <item
         android:id="@+id/settingsFragment"
         android:icon="@drawable/ic_baseline_settings_24"
-        android:title="Settings"/>
+        android:title="@string/settings" />
 </menu>
