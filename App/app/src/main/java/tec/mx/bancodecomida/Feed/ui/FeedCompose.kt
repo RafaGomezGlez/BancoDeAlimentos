@@ -21,6 +21,7 @@ import tec.mx.bancodecomida.Feed.model.New
 @Composable
 fun DisplayNews(selectedItem: (New) -> Unit) {
     var newList by remember { mutableStateOf(listOf<New>()) }
+    var newList2 by remember { mutableStateOf(listOf<New>()) }
     //Firestore call in order to fill all data
     JetFirestore(
         path = { collection("New") },
@@ -28,78 +29,92 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
         onRealtimeCollectionFetch = { values, _ ->
             newList = values.getListOfObjects()
         }
-    ){
-        ConstraintLayout {
-            // Create references for the composables to constrain
-            val (box1,box2, text, text1) = createRefs()
-            val new = newList
-            // Assign reference "text" to the Text composable
-            // and constrain it to the bottom of the Button composable
-
-            Text(
-                text = "Breaking News",
-                fontSize = 30.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier
-                    .padding(start = 20.dp)
-                    .constrainAs(text) {
-                        top.linkTo(parent.top, margin = 65.dp)
-                    }
-            )
-            Box(
-                modifier =  Modifier
-                    .constrainAs(box1){
-                        top.linkTo(text.bottom, margin = 0.dp )
-                    }
-                    .fillMaxWidth()
-                    .height(250.dp)
-                    .padding(0.dp),
-
-            ) {
-                LazyRow(
-                    contentPadding = PaddingValues(horizontal = 0.dp, vertical = 2.dp),
-                ) {
-                    items(
-                        items = new,
-                        itemContent = {
-                            Carousel().Carousel(new = it, selectedItem = selectedItem )
-                        }
-                    )
-                }
+    )
+    {
+        JetFirestore(
+            path = { collection("New2") },
+            queryOnCollection = { orderBy("id", Query.Direction.DESCENDING) },
+            onRealtimeCollectionFetch = { values, _ ->
+                newList2 = values.getListOfObjects()
             }
-            Text(
-                text = "Most Popular",
-                fontSize = 30.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier
-                    .padding(start = 20.dp)
-                    .constrainAs(text1) {
-                        top.linkTo(box1.bottom, margin = 0.dp)
-                    })
-            Box(
-                modifier =  Modifier
-                    .fillMaxWidth()
-                    .constrainAs(box2){
-                    bottom.linkTo(parent.bottom, margin = 48.dp )
-                        top.linkTo(text1.bottom, margin = 0.dp)
-                    height = (Dimension.fillToConstraints)
+        )
+        {
 
-                    },
-                contentAlignment = Alignment.Center
-            ){
-                LazyColumn(
-                    contentPadding = PaddingValues(horizontal = 0.dp, vertical = 1.dp),
+        ConstraintLayout {
+                // Create references for the composables to constrain
+                val (box1,box2, text, text1) = createRefs()
+                val new = newList
+                val new2 = newList2
+
+                // Assign reference "text" to the Text composable
+                // and constrain it to the bottom of the Button composable
+
+                Text(
+                    text = "Breaking News",
+                    fontSize = 30.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .padding(start = 20.dp)
+                        .constrainAs(text) {
+                            top.linkTo(parent.top, margin = 65.dp)
+                        }
+                )
+                Box(
+                    modifier =  Modifier
+                        .constrainAs(box1){
+                            top.linkTo(text.bottom, margin = 0.dp )
+                        }
+                        .fillMaxWidth()
+                        .height(250.dp)
+                        .padding(0.dp),
+
+                    ) {
+                    LazyRow(
+                        contentPadding = PaddingValues(horizontal = 0.dp, vertical = 2.dp),
+                    ) {
+                        items(
+                            items = new2,
+                            itemContent = {
+                                Carousel().Carousel(new = it, selectedItem = selectedItem )
+                            }
+                        )
+                    }
+                }
+                Text(
+                    text = "Most Popular",
+                    fontSize = 30.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .padding(start = 20.dp)
+                        .constrainAs(text1) {
+                            top.linkTo(box1.bottom, margin = 0.dp)
+                        })
+                Box(
+                    modifier =  Modifier
+                        .fillMaxWidth()
+                        .constrainAs(box2){
+                            bottom.linkTo(parent.bottom, margin = 48.dp )
+                            top.linkTo(text1.bottom, margin = 0.dp)
+                            height = (Dimension.fillToConstraints)
+
+                        },
+                    contentAlignment = Alignment.Center
+                ){
+                    LazyColumn(
+                        contentPadding = PaddingValues(horizontal = 0.dp, vertical = 1.dp),
                         modifier = Modifier
                     ) {
-                    items(
-                        items = new,
-                        itemContent = {
-                            ListItem().NewsListItem(new = it, selectedItem = selectedItem)
-                        }
-                    )
+                        items(
+                            items = new,
+                            itemContent = {
+                                ListItem().NewsListItem(new = it, selectedItem = selectedItem)
+                            }
+                        )
+                    }
                 }
             }
         }
+
     }
 
 }
