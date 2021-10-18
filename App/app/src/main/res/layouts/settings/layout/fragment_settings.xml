@@ -67,16 +67,16 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="244dp"
-            android:layout_height="156dp"
+            android:layout_width="280dp"
+            android:layout_height="248dp"
             android:contentDescription="@string/todo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.817"
-            app:srcCompat="@drawable/bancomx_logo_color" />
+            app:layout_constraintVertical_bias="0.871"
+            app:srcCompat="@drawable/descarga" />
 
         <TextView
             android:id="@+id/changeLangTextView"
