@@ -1,16 +1,14 @@
 package tec.mx.bancodecomida.Milestones
 
-//import org.graalvm.compiler.hotspot.replacements.HotSpotReplacementsUtil.config
-
-import android.content.Intent
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import androidx.fragment.app.Fragment
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -26,7 +24,6 @@ import com.paypal.checkout.order.PurchaseUnit
 import com.paypal.checkout.paymentbutton.PayPalButton
 import tec.mx.bancodecomida.R
 import tec.mx.bancodecomida.databinding.FragmentDonationBinding
-import java.math.BigDecimal
 
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,6 +36,8 @@ private val binding get() = _binding!!
 
 class donationFragment : Fragment(R.layout.fragment_donation) {
 
+    private val moneyAccountRef = Firebase.firestore.collection("bamxDonations").document("mainAccount")
+
     private var param1: String? = null
     private var param2: String? = null
     lateinit var payPalButton: PayPalButton
@@ -50,6 +49,7 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
     lateinit var donate500: Button
     lateinit var donate1000: Button
 
+     @SuppressLint("SetTextI18n")
      override fun onCreateView(inflater: LayoutInflater,
                                container: ViewGroup?,
                                savedInstanceState: Bundle?): View {
@@ -168,15 +168,52 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
          return view
      }
 
-    private fun saveFirestore(donationAmount: Int) {
-        val db = FirebaseFirestore.getInstance()
-        val moneyAccount : MutableMap<Int, Any> = HashMap()
-        //moneyAccount["totalMoney"] = donationAmount
+    private fun getAccountBalance(): Int {
+        var balance = 0
+        val docRef =  FirebaseFirestore.getInstance()
+            .collection("bamxDonations").document("mainAccount")
+        docRef.get()
+            .addOnSuccessListener { document ->
+            if (document != null) {
+                Log.d("PRUEBA", "DocumentSnapshot data: ${document.data}")
+                Log.d("PRUEBA", "${document["totalMoney"]}")
+
+                balance= document["totalMoney"].toString().toInt()
+                Log.wtf("Prueba", "${balance}")
+            } else {
+                Log.d("PRUEBA", "No such document")
+            }
+        }
+            .addOnFailureListener { exception ->
+                Log.d("DEBUG", "get failed with ", exception)
+            }
+        return balance
     }
+
+    private fun saveFirestore(donationMoney: Int){
+        val totalMoneyCalc=donationMoney.toDouble()
+        var docRef =  FirebaseFirestore.getInstance()
+            .collection("bamxDonations")
+            .document("mainAccount")
+//        val map = mutableMapOf<String, Any>()
+//        map["totalMoney"]=totalMoneyCalc
+
+        docRef.update("totalMoney", FieldValue.increment(totalMoneyCalc))
+            .addOnSuccessListener {
+                Log.d("Logrado", "saveFirestore: valido ")
+            }.addOnFailureListener { exception ->
+                Log.d("Error", "get failed with ", exception)
+            }
+    }
+
 
     // Method of the binding library
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+    data class bamxMoneyAccount(
+        internal var monthGoal: Int = 0,
+        internal var totalMoney: Int = 0
+    )
 }
