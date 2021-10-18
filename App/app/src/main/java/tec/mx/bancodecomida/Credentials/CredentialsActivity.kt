@@ -23,15 +23,19 @@ import android.view.Window
 import androidx.core.content.ContextCompat
 
 import android.view.WindowManager
-
-
+import androidx.fragment.app.Fragment
+import tec.mx.bancodecomida.R
+import tec.mx.bancodecomida.Settings.settings_support_agreements
 
 
 private lateinit var auth: FirebaseAuth
 
 
 class CredentialsActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         Thread.sleep(1000)
         setTheme(tec.mx.bancodecomida.R.style.AppTheme)
         super.onCreate(savedInstanceState)
@@ -56,5 +60,7 @@ class CredentialsActivity : AppCompatActivity() {
             val activityIntent = Intent(this, MainActivity::class.java)
             startActivity(activityIntent)
         }
-    }}
+    }
+}
+
 

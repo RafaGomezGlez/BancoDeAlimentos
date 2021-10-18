@@ -18,6 +18,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import tec.mx.bancodecomida.Credentials.Model.User
+import tec.mx.bancodecomida.Credentials.CredentialsActivity
+import tec.mx.bancodecomida.MainActivity
 import tec.mx.bancodecomida.R
 import tec.mx.bancodecomida.databinding.FragmentSignInBinding
 import java.util.regex.Pattern
@@ -45,10 +47,15 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        val checkboxError = binding.checkboxErrorTextView
+        val checkbox = binding.checkBox
         //Listener for the Sign In button, when it's pushed the data is send to
         // FeedFragment
         binding.buttonSignIn.setOnClickListener{
-           signIn(view)
+            if(checkbox.isChecked){
+                signIn(view)
+            }
+            else{checkboxError.text = "Acepta las Condiciones." }
         }
 
         val firstName = binding.firstNameEditText
@@ -100,6 +107,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
             }
             manageSignUpButton()
         }
+
 
         return view
     }
@@ -171,6 +179,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
                 "$");
         return passwordREGEX.matcher(password).matches()
     }
+
 
     private fun manageSignUpButton(){
         binding.buttonSignIn.isEnabled = firstNameIsValid && lastNameIsValid && emailIsValid && passwordIsValid
