@@ -41,6 +41,11 @@
         <!--app:itemIconTint="@drawable/bottom_nav_icon_selector"
         app:itemTextColor="@drawable/bottom_nav_icon_selector"-->
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frag"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -54,7 +54,15 @@
         android:id="@+id/settings_support"
         android:name="tec.mx.bancodecomida.Settings.settings_support"
         android:label="@string/support"
-        tools:layout="@layout/fragment_settings_support" />
+        tools:layout="@layout/fragment_settings_support" >
+        <action
+            android:id="@+id/action_settings_support_to_settings_support_agreements"
+            app:destination="@id/settings_support_agreements" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings_support_agreements"
+        android:name="tec.mx.bancodecomida.Settings.settings_support_agreements"
+        tools:layout="@layout/fragment_settings_support_agreements" />
     <fragment
         android:id="@+id/donationFragment"
         android:name="tec.mx.bancodecomida.Milestones.donationFragment"

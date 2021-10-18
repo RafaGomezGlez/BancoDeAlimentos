@@ -24,7 +24,7 @@
     <string name="milestones_news">Milestones</string>
     <string name="report_a_problem">Report a problem</string>
     <string name="help_service">Help service</string>
-    <string name="use_conditions">Use conditions</string>
+    <string name="use_conditions">Terms and conditions</string>
     <string name="privacy_policies">Privacy policies</string>
     <string name="todo">TODO</string>
     <string name="familias_alimentadas_en_mexico">Fed families in Mexico</string>
@@ -44,5 +44,6 @@
     <string name="make_payment">Make Payment</string>
     <string name="select_lang">Select language</string>
     <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
     <string name="change_language_text">Change language</string>
 </resources>

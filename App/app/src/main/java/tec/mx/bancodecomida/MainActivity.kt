@@ -2,17 +2,21 @@ package tec.mx.bancodecomida
 
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
 import android.os.LocaleList.setDefault
+import android.view.KeyEvent
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -27,14 +31,9 @@ import com.paypal.checkout.config.Environment
 import com.paypal.checkout.config.SettingsConfig
 import com.paypal.checkout.createorder.CurrencyCode
 import com.paypal.checkout.createorder.UserAction
+import tec.mx.bancodecomida.Settings.settings_support_agreements
 import tec.mx.bancodecomida.databinding.ActivityMainBinding
 import java.util.*
-
-
-
-
-
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -47,10 +46,18 @@ class MainActivity : AppCompatActivity() {
     //Navigation Bar
     private lateinit var appBarConfiguration: AppBarConfiguration
     lateinit var YOUR_CLIENT_ID: String
-
+    //Locale
     private lateinit var editor: SharedPreferences.Editor
     private lateinit var sharedPreferences: SharedPreferences
+    // Agreements
+    // private val WebView1: Fragment = settings_support_agreements.newInstance("https://bamx.org.mx/privacy-policy/")
+    private val WebView1: Fragment = settings_support_agreements.newInstance("file:///android_asset/privacy.html")
+    private val WebView2: Fragment = settings_support_agreements.newInstance("file:///android_asset/termsandconditions.html")
+    private val fm = supportFragmentManager
+    private var visibleWebView1: Fragment = WebView1
+    private var visibleWebView2: Fragment = WebView2
 
+    var webViewNum: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -102,6 +109,38 @@ class MainActivity : AppCompatActivity() {
         )
         PayPalCheckout.setConfig(config)
 
+    }
+
+    // Load agreements
+    fun loadAgreements1() {
+        fm.beginTransaction().add(R.id.frag, WebView1).commit()
+        webViewNum = 1
+    }
+
+    fun loadAgreements2() {
+        fm.beginTransaction().add(R.id.frag, WebView2).commit()
+        webViewNum = 2
+    }
+
+    fun rmAgreement() {
+        if(webViewNum == 1)
+            fm.beginTransaction().remove(WebView1).commit()
+        else if(webViewNum == 2)
+            fm.beginTransaction().remove(WebView2).commit()
+    }
+
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        return if ((keyCode == KeyEvent.KEYCODE_BACK) && (webViewNum == 1)) {
+            val intent = Intent(visibleWebView1.hashCode().toString())
+            LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
+            true
+        } else if((keyCode == KeyEvent.KEYCODE_BACK) && (webViewNum == 2)) {
+            val intent = Intent(visibleWebView2.hashCode().toString())
+            LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
+            true
+        } else
+            super.onKeyDown(keyCode, event)
     }
 
     // Language config

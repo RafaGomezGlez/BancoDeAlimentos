@@ -8,16 +8,21 @@
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layout/fragment_feed.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layout/fragment_mapa.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layout/fragment_milestones.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layout/fragment_settings_privacy.xml" value="0.3663949275362319" />
+        <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layout/fragment_settings_support_agreements.xml" value="0.3591485507246377" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/credentials/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/credentials/layout/fragment_presentation.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/credentials/layout/fragment_sign_in.xml" value="0.33605072463768115" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/milestones/layout/fragment_donation.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/settings/layout/fragment_settings.xml" value="0.33605072463768115" />
+        <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/milestones/mipmap-anydpi-v26/communityicon.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/settings/layout/fragment_settings.xml" value="0.18" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/settings/layout/fragment_settings_notifications.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/settings/layout/fragment_settings_payment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/settings/layout/fragment_settings_profile.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/settings/layout/fragment_settings_support.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/layouts/settings/layout/fragment_settings_support.xml" value="0.22474747474747475" />
         <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/menu/draw_bottom_nav_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/0820n/OneDrive/Documentos/TEC/ANDROIDSTUDIO/TC2007B.2/App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/drawable/bottom_nav_icon_selector.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/LENOVO/Downloads/RetoBancoComida/Proyecto/TC2007B.2/App/app/src/main/res/drawable/ic_baseline_flag_24.xml" value="0.3828125" />
@@ -105,7 +110,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1" />
+        <option name="scale" value="0.22474747474747475" />
       </ProjectState>
     </option>
   </component>
