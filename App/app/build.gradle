@@ -22,6 +22,9 @@ android {
         resConfigs("en", "es")
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -43,9 +46,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        useIR = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion '1.1.0-alpha03'
+        kotlinCompilerVersion '1.5.21'
     }
 
     sourceSets {
@@ -53,6 +58,11 @@ android {
             res {
                 srcDirs 'src\\main\\res', 'src\\main\\res\\layouts\\credentials', 'src\\main\\res\\layouts\\settings', 'src\\main\\res\\layouts\\feed', 'src\\main\\res\\layouts\\milestones'
             }
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
 }
@@ -69,6 +79,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.firebase:firebase-firestore-ktx:23.0.4'
+    implementation "androidx.compose.ui:ui:$compose_version"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

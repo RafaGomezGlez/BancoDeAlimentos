@@ -7,6 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -16,6 +17,7 @@ import com.google.firebase.firestore.Query
 import com.jet.firestore.JetFirestore
 import com.jet.firestore.getListOfObjects
 import tec.mx.bancodecomida.Feed.model.New
+import tec.mx.bancodecomida.R
 
 
 @Composable
@@ -46,28 +48,24 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                 val new = newList
                 val new2 = newList2
 
-                // Assign reference "text" to the Text composable
-                // and constrain it to the bottom of the Button composable
-
-                Text(
-                    text = "Breaking News",
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                        .constrainAs(text) {
-                            top.linkTo(parent.top, margin = 65.dp)
-                        }
-                )
-                Box(
-                    modifier =  Modifier
-                        .constrainAs(box1){
-                            top.linkTo(text.bottom, margin = 0.dp )
-                        }
-                        .fillMaxWidth()
-                        .height(250.dp)
-                        .padding(0.dp),
-
+            Text(
+                stringResource(R.string.recent_news),
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .padding(start = 20.dp)
+                    .constrainAs(text) {
+                        top.linkTo(parent.top, margin = 65.dp)
+                    }
+            )
+            Box(
+                modifier =  Modifier
+                    .constrainAs(box1){
+                        top.linkTo(text.bottom, margin = 0.dp )
+                    }
+                    .fillMaxWidth()
+                    .height(250.dp)
+                    .padding(0.dp),
                     ) {
                     LazyRow(
                         contentPadding = PaddingValues(horizontal = 0.dp, vertical = 2.dp),
@@ -80,23 +78,23 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                         )
                     }
                 }
-                Text(
-                    text = "Most Popular",
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                        .constrainAs(text1) {
-                            top.linkTo(box1.bottom, margin = 0.dp)
-                        })
-                Box(
-                    modifier =  Modifier
-                        .fillMaxWidth()
-                        .constrainAs(box2){
-                            bottom.linkTo(parent.bottom, margin = 48.dp )
-                            top.linkTo(text1.bottom, margin = 0.dp)
-                            height = (Dimension.fillToConstraints)
 
+            Text(
+                stringResource(R.string.most_popular),
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .padding(start = 20.dp)
+                    .constrainAs(text1) {
+                        top.linkTo(box1.bottom, margin = 0.dp)
+                    })
+            Box(
+                modifier =  Modifier
+                    .fillMaxWidth()
+                    .constrainAs(box2){
+                    bottom.linkTo(parent.bottom, margin = 48.dp )
+                        top.linkTo(text1.bottom, margin = 0.dp)
+                    height = (Dimension.fillToConstraints)
                         },
                     contentAlignment = Alignment.Center
                 ){

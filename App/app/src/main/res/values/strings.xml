@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BancoDeComida</string>
+    <string name="app_name">Banco de Alimentos</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="recent_news">Breaking News</string>
@@ -10,6 +10,7 @@
     <string name="donate">Donate</string>
     <string name="show_data">Show Data</string>
     <string name="mapa">Map</string>
+    <string name="home">Home</string>
     <string name="settings">Settings</string>
     <string name="profile">Profile</string>
     <string name="notifications">Notifications</string>
@@ -19,8 +20,8 @@
     <string name="payment_history">Payment history</string>
     <string name="email_notifications">Email notifications</string>
     <string name="donations">Donations</string>
-    <string name="feed_news">Feed news</string>
-    <string name="milestones_news">Milestones news</string>
+    <string name="feed_news">Feed</string>
+    <string name="milestones_news">Milestones</string>
     <string name="report_a_problem">Report a problem</string>
     <string name="help_service">Help service</string>
     <string name="use_conditions">Use conditions</string>
@@ -41,5 +42,7 @@
     <string name="create_account">Create an account</string>
     <string name="enter_amount_to_be_paid">Enter Amount to be Paid</string>
     <string name="make_payment">Make Payment</string>
-    <string name="change_language_text">EN | es</string>
+    <string name="select_lang">Select language</string>
+    <string name="cancel">Cancel</string>
+    <string name="change_language_text">Change language</string>
 </resources>
