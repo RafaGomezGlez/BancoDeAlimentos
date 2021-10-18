@@ -2,11 +2,14 @@ package tec.mx.bancodecomida
 
 import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.toObject
 import tec.mx.bancodecomida.databinding.FragmentMilestonesBinding
 
 
@@ -34,28 +37,52 @@ class milestones : Fragment(R.layout.fragment_milestones) {
         }
 
         //Progress bar settings
-        binding.progressBarGuadalajara.max = 1000
-        binding.progressBarTlaquepaque.max = 1000
-        binding.progressBarTonala.max = 1000
-
-        val currentProgressGuadalajara = 800
-        val currentProgressTlaquepaque = 350
-        val currentProgressTonala = 500
-
-        ObjectAnimator.ofInt(binding.progressBarGuadalajara, "progress", currentProgressGuadalajara)
-            .setDuration(2000)
-            .start()
-
-        ObjectAnimator.ofInt(binding.progressBarTlaquepaque, "progress", currentProgressTlaquepaque)
-            .setDuration(2000)
-            .start()
-
-        ObjectAnimator.ofInt(binding.progressBarTonala, "progress", currentProgressTonala)
-            .setDuration(2000)
-            .start()
+        modifyProgressBars()
 
         // Inflate the layout for this fragment
         return view
+    }
+
+    private fun modifyProgressBars() {
+        val docRef =  FirebaseFirestore.getInstance()
+            .collection("bamxDonations").document("mainAccount")
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    Log.d("PRUEBA", "DocumentSnapshot data: ${document.data}")
+                    Log.d("PRUEBA", "${document["monthGoal"]}")
+                    val accountGoals = document.toObject<BamxAccountInfo>()
+
+                    if(accountGoals != null) {
+                        //Max progress bar settings
+                        binding.progressBarMonthGoal.max = accountGoals.monthGoal!!
+                        binding.progressBarWeekGoal.max = accountGoals.weeklyGoal!!
+                        binding.progressBarRecord.max = accountGoals.record!!
+
+                        //Current progress settings
+                        ObjectAnimator.ofInt(binding.progressBarMonthGoal, "progress", accountGoals.totalMoney!!)
+                            .setDuration(2000)
+                            .start()
+                        ObjectAnimator.ofInt(binding.progressBarWeekGoal, "progress", accountGoals.totalMoney!!)
+                            .setDuration(2000)
+                            .start()
+                        ObjectAnimator.ofInt(binding.progressBarRecord, "progress", accountGoals.totalMoney!!)
+                            .setDuration(2000)
+                            .start()
+
+                        Log.wtf("Account goal m",accountGoals.monthGoal.toString())
+                        Log.wtf("Account goal w",accountGoals.weeklyGoal.toString())
+                        Log.wtf("Account goal r",accountGoals.record.toString())
+                        Log.wtf("money",accountGoals.totalMoney.toString())
+
+                    }
+                } else {
+                    Log.d("PRUEBA", "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d("DEBUG", "get failed with ", exception)
+            }
     }
 
     // Method of the binding library
@@ -63,4 +90,10 @@ class milestones : Fragment(R.layout.fragment_milestones) {
         super.onDestroyView()
         _binding = null
     }
+    data class BamxAccountInfo(
+         val monthGoal: Int? = null,
+         val totalMoney: Int? = null,
+         val weeklyGoal: Int? = null,
+         val record: Int? = null
+    )
 }

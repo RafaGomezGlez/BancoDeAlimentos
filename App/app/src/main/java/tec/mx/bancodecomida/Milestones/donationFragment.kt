@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -42,12 +41,6 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
     private var param2: String? = null
     lateinit var payPalButton: PayPalButton
     lateinit var donationAmount: String
-    //Donation buttons
-    lateinit var donate50: Button
-    lateinit var donate100: Button
-    lateinit var donate200: Button
-    lateinit var donate500: Button
-    lateinit var donate1000: Button
 
      @SuppressLint("SetTextI18n")
      override fun onCreateView(inflater: LayoutInflater,
@@ -102,101 +95,77 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
              }
          )
          //Button config
-         donate50.setOnClickListener(){
-             if(donated50 == false) {
+         donate50.setOnClickListener {
+             if(!donated50) {
                  donated50 = true
-                 donationAmount = donationAmount + 50
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount += 50
+                 donationAmountText.text = "$$donationAmount MXN"
              }else{
                  donated50 = false
-                 donationAmount = donationAmount - 50
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount -= 50
+                 donationAmountText.text = "$$donationAmount MXN"
              }
          }
 
-         donate100.setOnClickListener(){
-             if(donated100 == false) {
+         donate100.setOnClickListener {
+             if(!donated100) {
                  donated100 = true
-                 donationAmount = donationAmount + 100
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount += 100
+                 donationAmountText.text = "$$donationAmount MXN"
              }else{
                  donated100 = false
-                 donationAmount = donationAmount - 100
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount -= 100
+                 donationAmountText.text = "$$donationAmount MXN"
              }
          }
-         donate200.setOnClickListener(){
-             if(donated200 == false) {
+         donate200.setOnClickListener {
+             if(!donated200) {
                  donated200 = true
-                 donationAmount = donationAmount + 200
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount += 200
+                 donationAmountText.text = "$$donationAmount MXN"
              }else{
                  donated200 = false
-                 donationAmount = donationAmount - 200
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount -= 200
+                 donationAmountText.text = "$$donationAmount MXN"
              }
          }
-         donate500.setOnClickListener(){
-             if(donated500 == false) {
+         donate500.setOnClickListener {
+             if(!donated500) {
                  donated500 = true
-                 donationAmount = donationAmount + 500
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount += 500
+                 donationAmountText.text = "$$donationAmount MXN"
              }else{
                  donated500 = false
-                 donationAmount = donationAmount - 500
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount -= 500
+                 donationAmountText.text = "$$donationAmount MXN"
              }
          }
-         donate1000.setOnClickListener(){
-             if(donated1000 == false) {
+         donate1000.setOnClickListener {
+             if(!donated1000) {
                  donated1000 = true
-                 donationAmount = donationAmount + 1000
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount += 1000
+                 donationAmountText.text = "$$donationAmount MXN"
              }else{
                  donated1000 = false
-                 donationAmount = donationAmount - 1000
-                 donationAmountText.text = "$"+donationAmount+" MXN"
+                 donationAmount -= 1000
+                 donationAmountText.text = "$$donationAmount MXN"
              }
          }
 
-        updateBalance.setOnClickListener(){
+        updateBalance.setOnClickListener {
             saveFirestore(donationAmount)
         }
-
-
 
          return view
      }
 
-    private fun getAccountBalance(): Int {
-        var balance = 0
-        val docRef =  FirebaseFirestore.getInstance()
-            .collection("bamxDonations").document("mainAccount")
-        docRef.get()
-            .addOnSuccessListener { document ->
-            if (document != null) {
-                Log.d("PRUEBA", "DocumentSnapshot data: ${document.data}")
-                Log.d("PRUEBA", "${document["totalMoney"]}")
 
-                balance= document["totalMoney"].toString().toInt()
-                Log.wtf("Prueba", "${balance}")
-            } else {
-                Log.d("PRUEBA", "No such document")
-            }
-        }
-            .addOnFailureListener { exception ->
-                Log.d("DEBUG", "get failed with ", exception)
-            }
-        return balance
-    }
 
     private fun saveFirestore(donationMoney: Int){
         val totalMoneyCalc=donationMoney.toDouble()
-        var docRef =  FirebaseFirestore.getInstance()
+        val docRef =  FirebaseFirestore.getInstance()
             .collection("bamxDonations")
             .document("mainAccount")
-//        val map = mutableMapOf<String, Any>()
-//        map["totalMoney"]=totalMoneyCalc
 
         docRef.update("totalMoney", FieldValue.increment(totalMoneyCalc))
             .addOnSuccessListener {
@@ -212,8 +181,5 @@ class donationFragment : Fragment(R.layout.fragment_donation) {
         super.onDestroyView()
         _binding = null
     }
-    data class bamxMoneyAccount(
-        internal var monthGoal: Int = 0,
-        internal var totalMoney: Int = 0
-    )
+
 }

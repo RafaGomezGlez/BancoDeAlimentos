@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
-            android:id="@+id/progressBarGuadalajara"
+            android:id="@+id/progressBarMonthGoal"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewGuadalajara" />
 
         <ProgressBar
-            android:id="@+id/progressBarTlaquepaque"
+            android:id="@+id/progressBarWeekGoal"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -55,8 +55,42 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTlaquepaque" />
 
+        <TextView
+            android:id="@+id/textViewGuadalajara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/monthGoal"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/progressBarMonthGoal"
+            app:layout_constraintStart_toStartOf="@+id/progressBarMonthGoal"
+            app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
+
+        <TextView
+            android:id="@+id/textViewTlaquepaque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/weekGoal"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/progressBarWeekGoal"
+            app:layout_constraintStart_toStartOf="@+id/progressBarWeekGoal"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarMonthGoal" />
+
+        <TextView
+            android:id="@+id/textViewTonala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="7dp"
+            android:text="@string/record"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/progressBarRecord"
+            app:layout_constraintStart_toStartOf="@+id/progressBarRecord"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarWeekGoal" />
+
         <ProgressBar
-            android:id="@+id/progressBarTonala"
+            android:id="@+id/progressBarRecord"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -70,40 +104,6 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTonala" />
-
-        <TextView
-            android:id="@+id/textViewGuadalajara"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="@string/guadalajara"
-            android:textSize="17sp"
-            app:layout_constraintBottom_toTopOf="@+id/progressBarGuadalajara"
-            app:layout_constraintStart_toStartOf="@+id/progressBarGuadalajara"
-            app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
-
-        <TextView
-            android:id="@+id/textViewTlaquepaque"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:text="@string/tlaquepaque"
-            android:textSize="17sp"
-            app:layout_constraintBottom_toTopOf="@+id/progressBarTlaquepaque"
-            app:layout_constraintStart_toStartOf="@+id/progressBarTlaquepaque"
-            app:layout_constraintTop_toBottomOf="@+id/progressBarGuadalajara" />
-
-        <TextView
-            android:id="@+id/textViewTonala"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginBottom="7dp"
-            android:text="@string/tonala"
-            android:textSize="17sp"
-            app:layout_constraintBottom_toTopOf="@+id/progressBarTonala"
-            app:layout_constraintStart_toStartOf="@+id/progressBarTonala"
-            app:layout_constraintTop_toBottomOf="@+id/progressBarTlaquepaque" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageFilterView"

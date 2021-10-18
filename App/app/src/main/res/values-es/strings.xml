@@ -32,9 +32,9 @@
     <string name="name">Nombre</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
-    <string name="guadalajara">Guadalajara</string>
-    <string name="tlaquepaque">Tlaquepaque</string>
-    <string name="tonala">Tonalá</string>
+    <string name="monthGoal">Meta mensual</string>
+    <string name="weekGoal">Meta semanal</string>
+    <string name="record">Meta record</string>
     <string name="Log_Out" />
     <string name="log_in">Entrar a cuenta</string>
     <string name="log_in_2">Entrar</string>
