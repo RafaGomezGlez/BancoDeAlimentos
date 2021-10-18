@@ -31,9 +31,9 @@
     <string name="name">Name</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
-    <string name="guadalajara">Guadalajara</string>
-    <string name="tlaquepaque">Tlaquepaque</string>
-    <string name="tonala">Tonala</string>
+    <string name="monthGoal">Month goal</string>
+    <string name="weekGoal">Week goal</string>
+    <string name="record">Record goal</string>
     <string name="Log_Out" />
     <string name="log_in">Log into Account</string>
     <string name="log_in_2">Log in</string>
