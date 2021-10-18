@@ -48,7 +48,6 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                 val new = newList
                 val new2 = newList2
 
-<<<<<<< HEAD
             Text(
                 stringResource(R.string.recent_news),
                 fontSize = 30.sp,
@@ -67,30 +66,6 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                     .fillMaxWidth()
                     .height(250.dp)
                     .padding(0.dp),
-=======
-                // Assign reference "text" to the Text composable
-                // and constrain it to the bottom of the Button composable
->>>>>>> efed069235cf9aff5de84525d0d549613901b9f9
-
-                Text(
-                    text = "Breaking News",
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                        .constrainAs(text) {
-                            top.linkTo(parent.top, margin = 65.dp)
-                        }
-                )
-                Box(
-                    modifier =  Modifier
-                        .constrainAs(box1){
-                            top.linkTo(text.bottom, margin = 0.dp )
-                        }
-                        .fillMaxWidth()
-                        .height(250.dp)
-                        .padding(0.dp),
-
                     ) {
                     LazyRow(
                         contentPadding = PaddingValues(horizontal = 0.dp, vertical = 2.dp),
@@ -103,8 +78,7 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                         )
                     }
                 }
-<<<<<<< HEAD
-            }
+
             Text(
                 stringResource(R.string.most_popular),
                 fontSize = 30.sp,
@@ -121,25 +95,6 @@ fun DisplayNews(selectedItem: (New) -> Unit) {
                     bottom.linkTo(parent.bottom, margin = 48.dp )
                         top.linkTo(text1.bottom, margin = 0.dp)
                     height = (Dimension.fillToConstraints)
-=======
-                Text(
-                    text = "Most Popular",
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(start = 20.dp)
-                        .constrainAs(text1) {
-                            top.linkTo(box1.bottom, margin = 0.dp)
-                        })
-                Box(
-                    modifier =  Modifier
-                        .fillMaxWidth()
-                        .constrainAs(box2){
-                            bottom.linkTo(parent.bottom, margin = 48.dp )
-                            top.linkTo(text1.bottom, margin = 0.dp)
-                            height = (Dimension.fillToConstraints)
->>>>>>> efed069235cf9aff5de84525d0d549613901b9f9
-
                         },
                     contentAlignment = Alignment.Center
                 ){
