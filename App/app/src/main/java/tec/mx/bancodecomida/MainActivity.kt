@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
+import android.os.LocaleList.setDefault
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -30,6 +31,12 @@ import tec.mx.bancodecomida.databinding.ActivityMainBinding
 import java.util.*
 
 
+
+
+
+
+
+
 class MainActivity : AppCompatActivity() {
 
     //Using navigation controller in order to facilitate the work of building the app
@@ -41,7 +48,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     lateinit var YOUR_CLIENT_ID: String
 
-    private lateinit var text_changeLanguage: TextView
     private lateinit var editor: SharedPreferences.Editor
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -96,20 +102,15 @@ class MainActivity : AppCompatActivity() {
         )
         PayPalCheckout.setConfig(config)
 
-        // Language config
-        LoadLocale()
-
-        text_changeLanguage = findViewById(R.id.text_changeLanguage)
-        text_changeLanguage.setOnClickListener {
-            openDialogForLanguageChange()
-        }
-
     }
 
-    private fun openDialogForLanguageChange() {
+    // Language config
+    fun openDialogForLanguageChange() {
+        val select_lang = resources.getString(R.string.select_lang)
+        val cancel_btn = resources.getString(R.string.cancel)
         val list = arrayOf("English", "Español")
         val alertDialog = AlertDialog.Builder(this)
-        alertDialog.setTitle("Seleccionar idioma")
+        alertDialog.setTitle(select_lang)
         alertDialog.setSingleChoiceItems(list, -1) { dialog, i ->
             if (i == 0) {
                 setLocale("en")
@@ -120,7 +121,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        alertDialog.setNeutralButton("Cancelar") { dialog, which ->
+        alertDialog.setNeutralButton(cancel_btn) { dialog, which ->
             dialog.cancel()
         }
 
@@ -130,7 +131,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setLocale(language: String) {
         val local = Locale(language)
-        Locale.setDefault(local)
+        //Locale.setDefault(local)
         val config = Configuration()
         config.setLocale(local)
 
@@ -141,14 +142,6 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
     }
 
-    private fun LoadLocale() {
-        sharedPreferences = getSharedPreferences("Ajustes", Context.MODE_PRIVATE)
-        val language = sharedPreferences.getString("idioma_seleccionado", " ")
-
-        if (language != null) {
-            setLocale(language)
-        }
-    }
 
     //We're connecting AppCompatActivity with NavigationUI, this means
     // that we're connecting the top part of our app (title, hamburger menu, etc)
