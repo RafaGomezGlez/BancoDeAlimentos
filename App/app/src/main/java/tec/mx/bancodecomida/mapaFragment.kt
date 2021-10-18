@@ -19,27 +19,25 @@ import com.google.android.gms.maps.model.MarkerOptions
 class mapa : Fragment() {
 
     private val callback = OnMapReadyCallback { googleMap ->
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
-        val zapopan = LatLng(20.6736, -103.344)
+        val BAMX = LatLng(20.656286973014126, -103.35543680445372)
+        val coloniaRehilete = LatLng(20.645025289320962, -103.46241001305546)
         //googleMap.addMarker(MarkerOptions().position(zapopan).title("Marker in Zapopan"))
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(zapopan))
         googleMap.addMarker(
             MarkerOptions()
-                .position(zapopan)
-                .title("zapopan")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.communityicon_foreground)).anchor(0.0f,0.0f)
-        )
+                .position(BAMX)
+                .title("Banco de Alimentos Guadalajara")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.communityicon_foreground)).anchor(0.5f,0.5f)
+        ).showInfoWindow()
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(coloniaRehilete)
+                .title("Colonia el Rehilete")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.alimentada_foreground)).anchor(0.5f,0.5f)
+        ).showInfoWindow()
         // Move the camera to the map coordinates and zoom in closer.
         // Move the camera to the map coordinates and zoom in closer.
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(zapopan))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(BAMX))
         googleMap.moveCamera(CameraUpdateFactory.zoomTo(11.5f))
 
     }
@@ -49,7 +47,6 @@ class mapa : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_mapa, container, false)
     }
 
