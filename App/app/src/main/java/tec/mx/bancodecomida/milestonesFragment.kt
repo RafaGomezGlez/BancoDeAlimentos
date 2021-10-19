@@ -12,11 +12,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import tec.mx.bancodecomida.databinding.FragmentMilestonesBinding
 
-
-
-
-
-
 //Using binding library in order to avoid using getElementById
 private var _binding: FragmentMilestonesBinding? = null
 private val binding get() = _binding!!
@@ -69,6 +64,11 @@ class milestones : Fragment(R.layout.fragment_milestones) {
                         ObjectAnimator.ofInt(binding.progressBarRecord, "progress", accountGoals.totalMoney!!)
                             .setDuration(2000)
                             .start()
+
+                        //Setup textview of Goals
+                        binding.monthGoalVal.text = "$"+accountGoals.monthGoal.toString()
+                        binding.weekGoalVal.text = "$"+accountGoals.weeklyGoal.toString()
+                        binding.recordGoalVal.text = "$"+accountGoals.record.toString()
 
                         Log.wtf("Account goal m",accountGoals.monthGoal.toString())
                         Log.wtf("Account goal w",accountGoals.weeklyGoal.toString())
