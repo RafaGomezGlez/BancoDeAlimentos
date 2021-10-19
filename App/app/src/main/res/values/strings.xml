@@ -28,6 +28,7 @@
     <string name="privacy_policies">Privacy policies</string>
     <string name="todo">TODO</string>
     <string name="familias_alimentadas_en_mexico">Fed families in Mexico</string>
+    <string name="name">Name</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
     <string name="monthGoal">Month goal</string>
