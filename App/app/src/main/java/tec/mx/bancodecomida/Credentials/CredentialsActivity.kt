@@ -37,18 +37,20 @@ class CredentialsActivity : AppCompatActivity() {
 
 
         Thread.sleep(1000)
-        setTheme(tec.mx.bancodecomida.R.style.AppTheme)
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
-        setContentView(tec.mx.bancodecomida.R.layout.activity_credentials)
+        setContentView(R.layout.activity_credentials)
 
         //Change color of actionbar
         val actionBar : ActionBar = supportActionBar!!
-        val colorDrawable = ColorDrawable(Color.parseColor("#ce0e2d"))
-        // Set BackgroundDrawable
-        actionBar.setBackgroundDrawable(colorDrawable)
+        actionBar.hide()
+//        val colorDrawable = ColorDrawable(Color.parseColor("#ce0e2d"))
+//        // Set BackgroundDrawable
+//        actionBar.setBackgroundDrawable(colorDrawable)
 
         //Change color of statusbar
         val window: Window = this.getWindow()
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.statusBarColor = Color.parseColor("#ce0e2d")
 
 
