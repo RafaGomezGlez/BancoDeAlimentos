@@ -12,6 +12,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import tec.mx.bancodecomida.databinding.FragmentMilestonesBinding
 
+import com.scwang.wave.MultiWaveHeader
+import kotlinx.android.synthetic.main.fragment_milestones.view.*
+
+
 //Using binding library in order to avoid using getElementById
 private var _binding: FragmentMilestonesBinding? = null
 private val binding get() = _binding!!
@@ -33,6 +37,23 @@ class milestones : Fragment(R.layout.fragment_milestones) {
 
         //Progress bar settings
         modifyProgressBars()
+
+        // Wave animation settings
+        val waveHeader = binding.waveHeader
+
+        waveHeader.startColor = R.color.design_default_color_primary
+        //waveHeader.closeColor = R.color.red
+        waveHeader.colorAlpha = 1f
+
+        //waveHeader.waveHeight = 50
+        waveHeader.gradientAngle = 360
+        waveHeader.progress = 0.8f
+        //waveHeader.velocity = 1f
+        waveHeader.scaleY = 1f
+
+        val progressMilestones = binding.progressMilestones
+        val progressNow: Float = (1 - waveHeader.progress) * 100
+        progressMilestones.text = "${progressNow.toInt()}%"
 
         // Inflate the layout for this fragment
         return view

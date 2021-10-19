@@ -22,10 +22,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/imageFilterView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.263"
+            app:layout_constraintHorizontal_bias="0.251"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.734" />
+            app:layout_constraintVertical_bias="0.735" />
 
         <TextView
             android:id="@+id/textViewGuadalajara"
@@ -45,11 +45,13 @@
             android:layout_marginStart="42dp"
             android:layout_marginTop="72dp"
             android:layout_marginEnd="42dp"
+            android:layout_marginBottom="362dp"
             android:progressTint="#4CAF50"
             android:scaleY="4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
+            app:layout_constraintTop_toBottomOf="@+id/waveHeader" />
 
         <TextView
             android:id="@+id/textViewTlaquepaque"
@@ -112,6 +114,42 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.209" />
 
+        <com.scwang.wave.MultiWaveHeader
+            android:id="@+id/waveHeader"
+            android:layout_width="165dp"
+            android:layout_height="162dp"
+            android:scaleY="-1"
+            app:layout_constraintBottom_toBottomOf="@+id/imageFilterView"
+            app:layout_constraintEnd_toEndOf="@+id/imageFilterView"
+            app:mwhColorAlpha="0.45"
+            app:mwhGradientAngle="45"
+            app:mwhIsRunning="true"
+            app:mwhProgress="1"
+            app:mwhVelocity="1"
+            app:mwhWaveHeight="50dp"
+            app:mwhWaves="PairWave" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:layout_constraintBottom_toBottomOf="@+id/imageFilterView"
+            app:layout_constraintEnd_toEndOf="@+id/imageFilterView">
+
+
+            <LinearLayout
+                android:layout_width="165dp"
+                android:layout_height="170dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/cropped_circle"
+                android:gravity="center">
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
         <Button
             android:id="@+id/donateButton"
             android:layout_width="wrap_content"
@@ -134,7 +172,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/progressBarRecord"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintHorizontal_bias="0.869"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -147,7 +185,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/progressBarWeekGoal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.788"
+            app:layout_constraintHorizontal_bias="0.864"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -160,8 +198,19 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/progressBarMonthGoal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.788"
+            app:layout_constraintHorizontal_bias="0.87"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/progressMilestones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="23dp"
+            android:text="TextView"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/monthGoalVal"
+            app:layout_constraintEnd_toEndOf="@+id/relativeLayout3"
+            app:layout_constraintStart_toStartOf="@+id/relativeLayout3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
