@@ -129,7 +129,6 @@ class MainActivity : AppCompatActivity() {
             fm.beginTransaction().remove(WebView2).commit()
     }
 
-
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         return if ((keyCode == KeyEvent.KEYCODE_BACK) && (webViewNum == 1)) {
             val intent = Intent(visibleWebView1.hashCode().toString())
