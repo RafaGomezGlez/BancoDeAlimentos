@@ -47,11 +47,13 @@ class milestones : Fragment(R.layout.fragment_milestones) {
 
         //waveHeader.waveHeight = 50
         waveHeader.gradientAngle = 360
-        waveHeader.progress = 0.8f
+        waveHeader.progress = 0.25f // config for inverted wave
         //waveHeader.velocity = 1f
         waveHeader.scaleY = 1f
 
         val progressMilestones = binding.progressMilestones
+
+        // Actual progress since default settings are inverted
         val progressNow: Float = (1 - waveHeader.progress) * 100
         progressMilestones.text = "${progressNow.toInt()}%"
 
