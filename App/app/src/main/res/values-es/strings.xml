@@ -46,5 +46,6 @@
     <string name="select_lang">Seleccionar idioma</string>
     <string name="cancel">Cancelar</string>
     <string name="close">Cerrar</string>
+    <string name="accept_agreements">Acepto los<a href="https://bamx.org.mx/privacy-policy/">términos y condiciones</a>, y la<a href="https://bamx.org.mx/privacy-policy/">política de privacidad</a></string>
     <string name="change_language_text">Cambiar idioma</string>
 </resources>

@@ -6,6 +6,7 @@ import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.text.method.LinkMovementMethod
 import android.util.Log
 import android.util.Patterns
 import android.view.*
@@ -57,6 +58,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
             }
             else{checkboxError.text = "Acepta las Condiciones." }
         }
+
+        checkbox.movementMethod = LinkMovementMethod.getInstance();
 
         val firstName = binding.firstNameEditText
         val firstNameError = binding.firstNameErrorTextView

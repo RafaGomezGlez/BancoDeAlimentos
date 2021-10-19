@@ -45,5 +45,6 @@
     <string name="select_lang">Select language</string>
     <string name="cancel">Cancel</string>
     <string name="close">Close</string>
+    <string name="accept_agreements">I accept <a href="https://bamx.org.mx/privacy-policy/">terms and conditions</a>, and <a href="https://bamx.org.mx/privacy-policy/">privacy policy</a></string>
     <string name="change_language_text">Change language</string>
 </resources>
