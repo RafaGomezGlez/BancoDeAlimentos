@@ -3,6 +3,7 @@ package tec.mx.bancodecomida.Credentials
 import android.app.Activity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.provider.Settings.Global.getString
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -11,6 +12,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.compose.material.Text
+import androidx.compose.ui.res.stringResource
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -61,7 +64,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         email.afterTextChangedDelayed {
             emailIsValid = email.text.length>0
             if(!emailIsValid){
-                errorMessage.text = "All fields are required"
+                errorMessage.setText(R.string.error_all_fields_required)
             }else if(passwordIsValid){
                 errorMessage.text = ""
             }
@@ -71,7 +74,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         password.afterTextChangedDelayed {
             passwordIsValid = password.text.length>0
             if(!passwordIsValid){
-                errorMessage.text = "All fields are required"
+                errorMessage.setText(R.string.error_all_fields_required)
             }else if(emailIsValid){
                 errorMessage.text = ""
             }
@@ -103,7 +106,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     Log.d("FIREBASE LOGIN", "Login exitoso")
                 } else {
                     Log.e("FIREBASE LOGIN", "error: ${it.exception?.message}")
-                    errorMessage.text = "Incorrect email or password"
+                    errorMessage.setText(R.string.error_email_pass)
                 }
             }
     }

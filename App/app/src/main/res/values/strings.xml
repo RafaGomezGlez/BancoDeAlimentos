@@ -37,6 +37,14 @@
     <string name="Log_Out" />
     <string name="log_in">Log into Account</string>
     <string name="log_in_2">Log in</string>
+    <string name="error_all_fields_required">All fields are required</string>
+    <string name="error_email_pass">Incorrect email or password</string>
+    <string name="error_agreements">Please accept terms and conditions</string>
+    <string name="error_first_name">First name must be at least 2 characters long</string>
+    <string name="error_last_name">Last name must be at least 2 characters long</string>
+    <string name="error_email">Invalid email address</string>
+    <string name="error_password">Invalid password</string>
+    <string name="successful_login">Successful login</string>
     <string name="log_out">Log out</string>
     <string name="signUp">Sign Up</string>
     <string name="create_account">Create an account</string>

@@ -56,7 +56,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
             if(checkbox.isChecked){
                 signIn(view)
             }
-            else{checkboxError.text = "Acepta las Condiciones." }
+            else{checkboxError.setText(R.string.error_agreements) }
         }
 
         checkbox.movementMethod = LinkMovementMethod.getInstance();
@@ -69,7 +69,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
                 firstNameError.text = ""
             }else{
                 firstNameIsValid = false
-                firstNameError.text = "First name must be at least 2 characters long"
+                firstNameError.setText(R.string.error_first_name)
             }
             manageSignUpButton()
         }
@@ -82,7 +82,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
                 lastNameError.text = ""
             }else{
                 lastNameIsValid = false
-                lastNameError.text = "Last name must be at least 2 characters long"
+                lastNameError.setText(R.string.error_last_name)
             }
             manageSignUpButton()
         }
@@ -92,7 +92,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
         email.afterTextChangedDelayed {
             emailIsValid = isValidEmail(email.text.toString())
             if (!emailIsValid){
-                emailError.text = "Invalid email address"
+                emailError.setText(R.string.error_email)
             }else{
                 emailError.text = ""
             }
@@ -104,7 +104,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in){
         password.afterTextChangedDelayed {
             passwordIsValid = isValidPassword(password.text.toString())
             if(!passwordIsValid){
-                passwordError.text = "Invalid password"
+                passwordError.setText(R.string.error_password)
             }else{
                 passwordError.text = ""
             }
