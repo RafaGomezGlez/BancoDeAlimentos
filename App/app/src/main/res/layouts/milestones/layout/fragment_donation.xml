@@ -113,7 +113,7 @@
             android:id="@+id/updateFirestore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Firebase test"
+            android:text="Payment sync"
             app:layout_constraintBottom_toTopOf="@+id/donate1000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
