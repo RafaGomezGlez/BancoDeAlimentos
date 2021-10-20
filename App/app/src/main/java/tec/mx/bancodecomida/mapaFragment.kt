@@ -21,24 +21,39 @@ class mapa : Fragment() {
     private val callback = OnMapReadyCallback { googleMap ->
         val BAMX = LatLng(20.656286973014126, -103.35543680445372)
         val coloniaRehilete = LatLng(20.645025289320962, -103.46241001305546)
-        //googleMap.addMarker(MarkerOptions().position(zapopan).title("Marker in Zapopan"))
-        //googleMap.moveCamera(CameraUpdateFactory.newLatLng(zapopan))
-        googleMap.addMarker(
-            MarkerOptions()
-                .position(BAMX)
-                .title("Banco de Alimentos Guadalajara")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.communityicon_foreground)).anchor(0.5f,0.5f)
-        ).showInfoWindow()
-        googleMap.addMarker(
-            MarkerOptions()
-                .position(coloniaRehilete)
-                .title("Colonia el Rehilete")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.alimentada_foreground)).anchor(0.5f,0.5f)
-        ).showInfoWindow()
-        // Move the camera to the map coordinates and zoom in closer.
-        // Move the camera to the map coordinates and zoom in closer.
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(BAMX))
-        googleMap.moveCamera(CameraUpdateFactory.zoomTo(11.5f))
+        val talpita = LatLng(20.684264410787097, -103.30492067957613)
+        val sergioBarrios = LatLng(20.440232061097518, -103.36590460989119)
+
+        with(googleMap) {
+            addMarker(
+                MarkerOptions()
+                    .position(BAMX)
+                    .title("Banco de Alimentos Guadalajara")
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.communityicon_foreground)).anchor(0.5f,0.5f)
+            ).showInfoWindow()
+            addMarker(
+                MarkerOptions()
+                    .position(coloniaRehilete)
+                    .title("Colonia El Rehilete")
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.alimentada_foreground)).anchor(0.5f,0.5f)
+            ).showInfoWindow()
+            addMarker(
+                MarkerOptions()
+                    .position(talpita)
+                    .title("Colonia Talpita")
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.alimentada_foreground)).anchor(0.5f,0.5f)
+            ).showInfoWindow()
+            addMarker(
+                MarkerOptions()
+                    .position(sergioBarrios)
+                    .title("Colonia Indigena Sergio Barrios")
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.alimentada_foreground)).anchor(0.5f,0.5f)
+            ).showInfoWindow()
+            // Move the camera to the map coordinates and zoom in closer.
+            // Move the camera to the map coordinates and zoom in closer.
+            moveCamera(CameraUpdateFactory.newLatLng(BAMX))
+            moveCamera(CameraUpdateFactory.zoomTo(11.5f))
+        }
 
     }
 
