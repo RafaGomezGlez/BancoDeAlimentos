@@ -5,6 +5,9 @@
     --tarjetaPrincipal: rgba(44, 44, 44, 0.5);
     --tarjetaInterna: rgba(255, 255, 255, 0.5);
     --colorError: rgb(253, 110, 110);
+    --colorEnfocado: white;
+    --colorPlaceholder: rgba(245, 245, 220, 0.425);
+    
     /* cuantitativos */
     --paddingTarjeta: 15px;
     --radioDeEsquinaTarjeta: 10px;
@@ -50,6 +53,7 @@ body {
     box-shadow: 0px 0px 30px 7px var(--tarjetaInterna);
     padding: var(--paddingTarjeta);
     width: 600px;
+    max-width: 90%;
     height: 400px;
 }
 
@@ -72,12 +76,10 @@ body {
     height: 33%;
     padding-top: 15px;
     padding-bottom: 15px;
-    /* border: 2px solid blue; */
 }
 
 #credencialesCuerpo {
     height: 40%;
-    /* border: 2px solid green; */
 }
 
 .filaMitad {
@@ -92,18 +94,15 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
     padding: 2%;
     height: 100%;
-}
-
-.campoLogin{
     border: 2px solid black;
 }
 
-.campoLogin:focus {
-    border: 2px solid white;
+.campo:focus{
+    border: 2px solid var(--colorEnfocado);
 }
 
-.campo::placeholder {
-    color: rgba(245, 245, 220, 0.425);
+.campo::placeholder, label{
+    color: var(--colorPlaceholder);
 }
 
 .campoLogin {
@@ -145,12 +144,11 @@ body {
     font-size: 20px;
     font-family: 'Gotham';
     border: none;
+    min-width: fit-content;
 }
 
 .botonPie {
     width: 35%;
-    /* background-color: var(--amarillo); */
-    /* float: right; */
     margin-right: 5%;
     margin-bottom: 5%;
     position: absolute;
@@ -159,6 +157,7 @@ body {
     height: 40%;
     padding-top: 3%;
 }
+
 
 .boton:hover {
     background: linear-gradient(180deg, var(--amarillo) 0%, rgb(255, 102, 0) 100%);
@@ -178,7 +177,7 @@ body {
 #contenedorPrincipalNoticia {
     overflow-y: auto;
     /* background: linear-gradient(200deg, black 0%, rgb(59, 59, 59) 100%); */
-    height: 1200px;
+    height: fit-content;
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -201,7 +200,6 @@ textarea {
     resize: none;
     height: 100px;
     width: 100%;
-    font-size: 17px;
 }
 
 body::-webkit-scrollbar{
@@ -217,7 +215,7 @@ textarea::-webkit-scrollbar {
 }
 
 #noticiaEncabezado {
-    height: 10%;
+    height: 110px;
 }
 
 #noticiaEncabezadoTexto {
@@ -225,7 +223,11 @@ textarea::-webkit-scrollbar {
 }
 
 #noticiaCuerpo {
-    height: 80%;
+    height: fit-content;
+}
+
+#noticiaCuerpo .campo, label{
+    font-size: 20px;
 }
 
 #noticiaCuerpo div{
@@ -234,7 +236,7 @@ textarea::-webkit-scrollbar {
 }
 
 #noticiaPie {
-    height: 10%;
+    height: 110px;
     position: relative;
 }
 
@@ -243,42 +245,31 @@ textarea::-webkit-scrollbar {
 }
 
 #contenedorTitulo{
-    height: 8%;
+    height: fit-content;
     text-align: left;
 }
 
 #campoTitulo{
-    font-size: 25px;
     width: 100%;
 }
 
 #contenedorContenido{
-    height: 63%;
+    height: 580px;
 }
-
-.campoNoticia{
-    border: 2px solid black;
-}
-
-.campoNoticia:focus{
-    border: 2px solid white;
-}
-
-
 
 #contenedorMultimedia{
-    height: 29%;
+    height: 250px;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
 }
 
 #contenedorCuadroImagen{
-    height: 80%;
+    height: 180px;
 }
 
 #cuadroImagen{
     height: 100%;
-    width: 30%;
+    width: 180px;
     border: 2px solid black;
     background-repeat: no-repeat;
     background-position: center;
@@ -287,12 +278,11 @@ textarea::-webkit-scrollbar {
 }
 
 #contenedorBotonCargarImagen{
-    height: 20%;
+    height: 50px;
 }
 
 #botonCargarImagen{
     height: 100%;
-    width: 15%;
     font-size: 12px;
     padding-top: 1%;
 }
@@ -302,9 +292,65 @@ textarea::-webkit-scrollbar {
     color: black;
 }
 
-#botonCargarImagenFalso{
+.escondido{
     position: absolute;
+    visibility: hidden;
+}
+
+#contenedorAutor{
+    text-align: left;
+}
+
+.clickable:hover{
+    cursor: pointer;
+}
+
+.campoInvalido, #cuadroImagen.campoInvalido{
+    border: 2px solid var(--colorError);
+}
+
+#cuadroImagen.campoInvalido > #missingImage {
+    color: var(--colorError);
+}
+
+input[type="radio"]:checked + label{
+    border: 2px solid var(--colorEnfocado);
+}
+
+label{
+    display: inline-block;
+    width: 100%;
+}
+
+.radioIzquierda{
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+}
+
+.radioDerecha{
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+}
+
+table{
+    width: 100%;
+}
+
+table td{
+    width: 50%;
+}
+
+#campoAutor{
+    width: 50%;
+}
+
+#botonCerrarSesion{
+    position: absolute;
+    height: 40px;
+    width: 10%;
     top: 0;
-    left: 0;
-    z-index: -1;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
 }

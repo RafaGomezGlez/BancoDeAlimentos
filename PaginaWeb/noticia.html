@@ -5,47 +5,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAMX</title>
+    <title>Nueva noticia</title>
     <link href="estilos.css" rel="stylesheet">
     <link
         href="http://fonts.cdnfonts.com/css/gotham?styles=17581,17582,17583,17584,17585,17587,17586,17579,17588,17580,17589,17591,17592,17595,17590,17593,17594,17596"
         rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagenes/bancomx_logo.png">
+
+    <!-- javascript -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/js/noticia.js"></script>
 </head>
 
 <body>
     <div id="contenedorPrincipalNoticia" class="contenedorPrincipal centrarHijos">
-        <div id="tarjetaPrincipalNoticia" class="tarjetaPrincipal">
+        <form id="tarjetaPrincipalNoticia" class="tarjetaPrincipal">
             <div id="noticiaEncabezado" class="centrarHijos redondeado">
                 <h1 id="noticiaEncabezadoTexto">Subir nueva noticia</h1>
             </div>
-            <div id="noticiaCuerpo">
+            <id id="noticiaCuerpo">
+                <div id="contenedorTipoNoticia">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="radio" id="reciente" class="escondido" name="tipoNoticia"
+                                        value="New2" checked/>
+                                    <label for="reciente" id="labelReciente"
+                                        class="campo redondeado radioIzquierda clickable">reciente</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="popular" class="escondido" name="tipoNoticia"
+                                        value="New" />
+                                    <label for="popular" id="labelRegular"
+                                        class="campo redondeado radioDerecha clickable">popular</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div id="contenedorTitulo">
-                    <input type="text" name="" id="campoTitulo" class="campo campoNoticia redondeado"
+                    <input type="text" name="titulo" id="campoTitulo" class="campo campoNoticia redondeado"
                         placeholder="título">
                 </div>
+                <div id="contenedorAutor">
+                    <input type="text" name="autor" id="campoAutor" class="campo campoNoticia redondeado"
+                        placeholder="autor">
+                </div>
                 <div id="contenedorContenido">
-                    <textarea name="" id="campoContenido" class="campo campoNoticia redondeado"
+                    <textarea name="contenido" id="campoContenido" class="campo campoNoticia redondeado"
                         placeholder="contenido"></textarea>
                 </div>
                 <div id="contenedorMultimedia">
                     <div id="contenedorCuadroImagen" class="centrarHijos">
-                        <div id="cuadroImagen" class="redondeado centrarHijos">
+                        <div id="cuadroImagen" class="redondeado centrarHijos clickable">
                             <span id="missingImage">?</span>
                         </div>
                     </div>
                     <div id="contenedorBotonCargarImagen" class="centrarHijos">
-                        <button id="botonCargarImagen" class="boton redondeado">cargar</button>
+                        <button type="button" id="botonCargarImagen" class="boton redondeado clickable">
+                            <span>cargar</span>
+                        </button>
                     </div>
                 </div>
-            </div>
+            </id>
             <div id="noticiaPie">
-                <button class="boton botonPie redondeado">subir</button>
+                <button class="boton botonPie redondeado clickable">
+                    <span>subir</span>
+                </button>
             </div>
-        </div>
+            <input type="file" name="archivo" id="botonCargarImagenFalso" class="escondido"
+                accept="image/x-png,image/jpeg" hidden>
+        </form>
     </div>
-    <input type="file" name="" id="botonCargarImagenFalso" accept="image/x-png,image/jpeg" hidden>
+    <button id="botonCerrarSesion" class="boton redondeado clickable">
+        <span>
+            cerrar sesión
+        </span>
+    </button>
 </body>
 
 </html>
