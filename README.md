@@ -1,4 +1,5 @@
-# TC2007B.2 Banco de Alimentos de Guadalajara Mobile app
+# Banco de Alimentos de Guadalajara Mobile app
+This mobile application was created in order to help the BAMX improving the amount of money donated by people and it's done by creating a feed and maps screens.
 Technologies Used
 ---------------
 ### Programming Languages
