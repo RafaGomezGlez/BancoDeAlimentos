@@ -11,7 +11,6 @@ Technologies Used
 ### API's
 - Paypal API
 - Google Maps API
-- Stripe API
 ### Libraries
 - Jetpack Compose
 - View Binding / Data Binding
